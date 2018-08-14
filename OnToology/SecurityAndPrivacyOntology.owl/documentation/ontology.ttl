@@ -1,0 +1,1936 @@
+@prefix : <http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://hl7.org/ontology/SecurityAndPrivacyOntology.owl> .
+
+<http://hl7.org/ontology/SecurityAndPrivacyOntology.owl> rdf:type owl:Ontology ;
+                                                          owl:versionIRI <http://hl7.org/ontology/SecurityAndPrivacyOntology.owl/1.0.0> ;
+                                                          <http://purl.org/dc/elements/1.1/contributor> "Tony Weida"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/creator> "HL7 Security and CBCC Work Groups"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/date> "September 2013"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/description> "This ontology currently represents core HL7 Security and Privacy concepts."^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/language> "en"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy Domain Analysis Model, May, 2010."^^xsd:string ,
+                                                                                                   "HL7 Healthcare Privacy and Security Classification System (HCS)"^^xsd:string ,
+                                                                                                   "ISO/TS 21298: Health informatics — Functional and structural roles "^^xsd:string ,
+                                                                                                   "ISO/TS 22600 Health informatics – Privilege management and access control, 2006."^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/subject> "HL7"^^xsd:string ,
+                                                                                                    "Privacy"^^xsd:string ,
+                                                                                                    "Security"^^xsd:string ;
+                                                          <http://purl.org/dc/elements/1.1/title> "SecurityAndPrivacyOntologyOntology"^^xsd:string ;
+                                                          owl:versionInfo "Release 1"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#allowedLoginLocation
+:allowedLoginLocation rdf:type owl:ObjectProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :UserIdentity ;
+                      rdfs:range :Location .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#assignsSecurityRole
+:assignsSecurityRole rdf:type owl:ObjectProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :UserAssignment ;
+                     rdfs:range :SecurityRole ;
+                     <http://purl.org/dc/elements/1.1/description> "Describes role(s) subject to assignment."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#assignsUserIdentity
+:assignsUserIdentity rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :UserAssignment ;
+                     rdfs:range :UserIdentity ;
+                     <http://purl.org/dc/elements/1.1/description> "Describes user(s) subject to assignment."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedBy
+:authorizedBy rdf:type owl:ObjectProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :PrivacyOperation ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :InterorganizationalAgreement
+                                         :Jurisdiction
+                                         :Organization
+                                         :Person
+                                       )
+                         ] .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedByAgreement
+:authorizedByAgreement rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :authorizedBy ;
+                       rdf:type owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:range :InterorganizationalAgreement ;
+                       rdfs:comment "May eliminate this specialization of the authorizedBy property."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedByLawOf
+:authorizedByLawOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :authorizedBy ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:range :Jurisdiction ;
+                   rdfs:comment "May eliminate this specialization of the authorizedBy property."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedByOrganization
+:authorizedByOrganization rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :authorizedBy ;
+                          rdf:type owl:AsymmetricProperty ,
+                                   owl:IrreflexiveProperty ;
+                          rdfs:range :Organization ;
+                          rdfs:comment "May eliminate this specialization of the authorizedBy property."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedBySubject
+:authorizedBySubject rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :authorizedBy ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:range :Person ;
+                     rdfs:comment "May eliminate this specialization of the authorizedBy property."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#basedOnPrivacyPolicy
+:basedOnPrivacyPolicy rdf:type owl:ObjectProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :PrivacyConsentDirective ;
+                      rdfs:range :PrivacyPolicy .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#catalogsConstraint
+:catalogsConstraint rdf:type owl:ObjectProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :ConstraintCatalog ;
+                    rdfs:range :Constraint ;
+                    <http://purl.org/dc/elements/1.1/description> "Describes constraint(s) within the scope of a catalog."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#constrainsSecurityPolicy
+:constrainsSecurityPolicy rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdf:type owl:AsymmetricProperty ,
+                                   owl:IrreflexiveProperty ;
+                          rdfs:domain :ConstraintPolicy ;
+                          rdfs:range :CompositeSecurityPolicy ;
+                          <http://purl.org/dc/elements/1.1/description> "Relates a constraint policy to a policy it constrains."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#containsSecurityPolicy
+:containsSecurityPolicy rdf:type owl:ObjectProperty ,
+                                 owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain :CompositeSecurityPolicy ;
+                        rdfs:range :BasicSecurityPolicy .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#createsObligation
+:createsObligation rdf:type owl:ObjectProperty ,
+                            owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :PrivacyRule ;
+                   rdfs:range :Obligation .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsInformationReference
+:governsInformationReference rdf:type owl:ObjectProperty ,
+                                      owl:AsymmetricProperty ,
+                                      owl:IrreflexiveProperty ;
+                             rdfs:domain [ rdf:type owl:Class ;
+                                           owl:unionOf ( :BasicSecurityPolicy
+                                                         :PrivacyRule
+                                                       )
+                                         ] ;
+                             rdfs:range :InformationReference ;
+                             <http://purl.org/dc/elements/1.1/description> "Describes exercise of control over a type of information reference."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsOperation
+:governsOperation rdf:type owl:ObjectProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :BasicSecurityPolicy
+                                              :PrivacyRule
+                                            )
+                              ] ;
+                  rdfs:range :Operation ;
+                  <http://purl.org/dc/elements/1.1/description> "Exercises control over a type of operation."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsPurposeOfUse
+:governsPurposeOfUse rdf:type owl:ObjectProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :BasicSecurityPolicy
+                                                 :PrivacyRule
+                                               )
+                                 ] ;
+                     rdfs:range :PurposeOfUse ;
+                     <http://purl.org/dc/elements/1.1/description> "Describes exercise of control for a purpose."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsSecurityRole
+:governsSecurityRole rdf:type owl:ObjectProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :BasicSecurityPolicy
+                                                 :PrivacyRule
+                                               )
+                                 ] ;
+                     rdfs:range :SecurityRole ;
+                     <http://purl.org/dc/elements/1.1/description> "Describes exercise of control over a type of role."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasAuthority
+:hasAuthority rdf:type owl:ObjectProperty ;
+              owl:inverseOf :hasPolicy ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :Policy ;
+              rdfs:range :Organization .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCitizenship
+:hasCitizenship rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Person ;
+                rdfs:range :Jurisdiction .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasClinicalObservation
+:hasClinicalObservation rdf:type owl:ObjectProperty ,
+                                 owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain :InformationReference ;
+                        rdfs:range :ClinicalObservation .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCompartment
+:hasCompartment rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :InformationReference ;
+                rdfs:range :Compartment .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasConfidentiality
+:hasConfidentiality rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :InformationReference ;
+                    rdfs:range :Confidentiality .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasConsenter
+:hasConsenter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :PrivacyConsentDirective ;
+              rdfs:range :Consenter .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasConstraintCatalog
+:hasConstraintCatalog rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :Organization ;
+                      rdfs:range :ConstraintCatalog ;
+                      <http://purl.org/dc/elements/1.1/description> "Describes constraint catalog(s) posessed."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCurrentLocation
+:hasCurrentLocation rdf:type owl:ObjectProperty ,
+                             owl:AsymmetricProperty ,
+                             owl:IrreflexiveProperty ;
+                    rdfs:domain :UserIdentity ;
+                    rdfs:range :Location .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCustodian
+:hasCustodian rdf:type owl:ObjectProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :InformationReference ;
+              rdfs:range :ProviderOrganization .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasInformationCustodian
+:hasInformationCustodian rdf:type owl:ObjectProperty ,
+                                  owl:AsymmetricProperty .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasIntegrity
+:hasIntegrity rdf:type owl:ObjectProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :InformationReference ;
+              rdfs:range :Integrity .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasJurisdiction
+:hasJurisdiction rdf:type owl:ObjectProperty ,
+                          owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :JurisdictionalOrganization ;
+                 rdfs:range :Jurisdiction .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasObject
+:hasObject rdf:type owl:ObjectProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :InformationReference ;
+           rdfs:range :Object .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasOrganization
+:hasOrganization rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain :InterorganizationalAgreement ;
+                 rdfs:range :Organization .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPaymentSource
+:hasPaymentSource rdf:type owl:ObjectProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :InformationReference ;
+                  rdfs:range :PaymentSource .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPolicy
+:hasPolicy rdf:type owl:ObjectProperty ,
+                    owl:AsymmetricProperty ,
+                    owl:IrreflexiveProperty ;
+           rdfs:domain :Organization ;
+           rdfs:range :Policy ;
+           <http://purl.org/dc/elements/1.1/description> "Describes policy or policies possessed."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPrivacyConsentDirective
+:hasPrivacyConsentDirective rdf:type owl:ObjectProperty ;
+                            owl:inverseOf :hasSubjectOfConsent ;
+                            rdf:type owl:InverseFunctionalProperty ,
+                                     owl:AsymmetricProperty ,
+                                     owl:IrreflexiveProperty ;
+                            rdfs:domain :Person ;
+                            rdfs:range :PrivacyConsentDirective .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPrivacyPolicy
+:hasPrivacyPolicy rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasPolicy ;
+                  rdf:type owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Organization ;
+                  rdfs:range :PrivacyPolicy .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPrivacyRule
+:hasPrivacyRule rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :PrivacyConsentDirective
+                                            :PrivacyPolicy
+                                          )
+                            ] ;
+                rdfs:range :PrivacyRule ;
+                <http://purl.org/dc/elements/1.1/description> "Describes privacy rule(s) posessed."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasRecipient
+:hasRecipient rdf:type owl:ObjectProperty ,
+                       owl:AsymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain :InformationReference ;
+              rdfs:range :Organization .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasRoleSet
+:hasRoleSet rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain :Organization ;
+            rdfs:range :RoleSet ;
+            <http://purl.org/dc/elements/1.1/description> "Describes set(s) of roles posessed."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSecurityPolicy
+:hasSecurityPolicy rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :hasPolicy ;
+                   rdf:type owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :Organization ;
+                   rdfs:range :SecurityPolicy .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSensitivity
+:hasSensitivity rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :InformationReference ;
+                rdfs:range :Sensitivity .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasServiceDeliveryLocation
+:hasServiceDeliveryLocation rdf:type owl:ObjectProperty ,
+                                     owl:AsymmetricProperty ,
+                                     owl:IrreflexiveProperty ;
+                            rdfs:domain :InformationReference ;
+                            rdfs:range :ServiceDeliveryLocation .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSubject
+:hasSubject rdf:type owl:ObjectProperty ,
+                     owl:AsymmetricProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                          owl:unionOf ( :InformationReference
+                                        :PrivacyConsentDirective
+                                      )
+                        ] ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Person
+                                       :Population
+                                     )
+                       ] .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSubjectOfConsent
+:hasSubjectOfConsent rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasSubject ;
+                     rdf:type owl:FunctionalProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :PrivacyConsentDirective ;
+                     rdfs:range :Person .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSubstituteDecisionMaker
+:hasSubstituteDecisionMaker rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :hasConsenter .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasUserAssignmentSet
+:hasUserAssignmentSet rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :Organization ;
+                      rdfs:range :UserAssignmentSet ;
+                      <http://purl.org/dc/elements/1.1/description> "Describes user assignment(s) posessed."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#includesSecurityRole
+:includesSecurityRole rdf:type owl:ObjectProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain :RoleSet ;
+                      rdfs:range :SecurityRole ;
+                      <http://purl.org/dc/elements/1.1/description> "Describes role(s) included within a set."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#includesUserAssignment
+:includesUserAssignment rdf:type owl:ObjectProperty ,
+                                 owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain :UserAssignmentSet ;
+                        rdfs:range :UserAssignment ;
+                        <http://purl.org/dc/elements/1.1/description> "Describes user assignment(s) included within a set."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isConsenterFor
+:isConsenterFor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ,
+                         owl:IrreflexiveProperty ;
+                rdfs:domain :Consenter ;
+                rdfs:range :Client .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isLegalGuardianOf
+:isLegalGuardianOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :isConsenterFor .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isLocationForOrganization
+:isLocationForOrganization rdf:type owl:ObjectProperty ,
+                                    owl:AsymmetricProperty ,
+                                    owl:IrreflexiveProperty ;
+                           rdfs:domain :Location ;
+                           rdfs:range :Organization .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isParentOf
+:isParentOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isConsenterFor .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isSubstituteDecisionMakerFor
+:isSubstituteDecisionMakerFor rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :isConsenterFor .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnInputObject
+:operatesOnInputObject rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :operatesOnObject ;
+                       rdf:type owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       <http://purl.org/dc/elements/1.1/description> "Describes input object(s) operated on."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnInputOutputObject
+:operatesOnInputOutputObject rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :operatesOnInputObject ,
+                                                :operatesOnOutputObject ;
+                             rdf:type owl:AsymmetricProperty ,
+                                      owl:IrreflexiveProperty ;
+                             <http://purl.org/dc/elements/1.1/description> "Describes input-output object(s) operated on."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnObject
+:operatesOnObject rdf:type owl:ObjectProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :Operation ;
+                  rdfs:range :Object ;
+                  <http://purl.org/dc/elements/1.1/description> "Describes object(s) operated on."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnOutputObject
+:operatesOnOutputObject rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :operatesOnObject ;
+                        rdf:type owl:AsymmetricProperty ,
+                                 owl:IrreflexiveProperty ;
+                        <http://purl.org/dc/elements/1.1/description> "Describes output object(s) operated on."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#restrictedToRoute
+:restrictedToRoute rdf:type owl:ObjectProperty ,
+                            owl:AsymmetricProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain :BasicSecurityPolicy ;
+                   rdfs:range :Route .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#separatesSecurityRole
+:separatesSecurityRole rdf:type owl:ObjectProperty ,
+                                owl:AsymmetricProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :SeparationOfDutyConstraint ;
+                       rdfs:range :SecurityRole ;
+                       <http://purl.org/dc/elements/1.1/description> "Describes roles separated by constraints (in the sense of Role Based Access Control), e.g., for separation of duty reasona."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesConstraint
+:specifiesConstraint rdf:type owl:ObjectProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :ConstraintPolicy ;
+                     rdfs:range :Constraint .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesGrantee
+:specifiesGrantee rdf:type owl:ObjectProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :DelegationPolicy
+                                              :PrivacyPolicy
+                                            )
+                              ] ;
+                  rdfs:range :Grantee .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesObligation
+:specifiesObligation rdf:type owl:ObjectProperty ,
+                              owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain :ObligationPolicy ;
+                     rdfs:range :Obligation .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesRefrain
+:specifiesRefrain rdf:type owl:ObjectProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain :RefrainPolicy ;
+                  rdfs:range :Refrain .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#allowedLoginTimeOfDay
+:allowedLoginTimeOfDay rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain :UserIdentity ;
+                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                    owl:onDatatype xsd:integer ;
+                                    owl:withRestrictions ( [ xsd:minInclusive 0
+                                                           ]
+                                                           [ xsd:maxInclusive 86400
+                                                           ]
+                                                         )
+                                  ] .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authenticationLevelOfAssurance
+:authenticationLevelOfAssurance rdf:type owl:DatatypeProperty ;
+                                rdfs:subPropertyOf :levelOfAssurance ;
+                                rdf:type owl:FunctionalProperty .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsTimeOfDay
+:governsTimeOfDay rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :BasicSecurityPolicy ;
+                  rdfs:range [ rdf:type rdfs:Datatype ;
+                               owl:onDatatype xsd:integer ;
+                               owl:withRestrictions ( [ xsd:minInclusive 0
+                                                      ]
+                                                      [ xsd:maxInclusive 86400
+                                                      ]
+                                                    )
+                             ] .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasDigitalSignature
+:hasDigitalSignature rdf:type owl:DatatypeProperty ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Organization
+                                                 :Person
+                                               )
+                                 ] ;
+                     rdfs:range xsd:base64Binary .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasDomainName
+:hasDomainName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Organization ;
+               rdfs:range xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasEffectiveTime
+:hasEffectiveTime rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Policy
+                                              :PrivacyConsentDirective
+                                              :PrivacyRule
+                                            )
+                              ] ;
+                  rdfs:range xsd:dateTime .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasIdentifier
+:hasIdentifier rdf:type owl:DatatypeProperty ;
+               rdfs:domain [ rdf:type owl:Class ;
+                             owl:unionOf ( :Object
+                                           :Organization
+                                           :Person
+                                           :Policy
+                                           :PrivacyConsentDirective
+                                           :UserIdentity
+                                         )
+                           ] ;
+               rdfs:range xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Organization
+                                     :Person
+                                     :Policy
+                                     :SecurityRole
+                                     :UserIdentity
+                                   )
+                     ] ;
+         rdfs:range xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPublicationURI
+:hasPublicationURI rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Policy
+                                               :PrivacyConsentDirective
+                                             )
+                               ] ;
+                   rdfs:range xsd:anyURI ;
+                   rdfs:comment "Intended to capture the web location where the document in question is published for human consumption, as opposed to the URI of this ontology element."^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasTimeOfTreatment
+:hasTimeOfTreatment rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :InformationReference ;
+                    rdfs:range xsd:dateTime .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasWrittenSignatureRecorded
+:hasWrittenSignatureRecorded rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain :Consenter ;
+                             rdfs:range xsd:boolean .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#identityProofingLevelOfAssurance
+:identityProofingLevelOfAssurance rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf :levelOfAssurance ;
+                                  rdf:type owl:FunctionalProperty .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#levelOfAssurance
+:levelOfAssurance rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :BasicSecurityPolicy
+                                              :UserIdentity
+                                            )
+                              ] ;
+                  rdfs:range xsd:integer .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#thirdPartyLevelOfAssurance
+:thirdPartyLevelOfAssurance rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf :levelOfAssurance ;
+                            rdf:type owl:FunctionalProperty ;
+                            rdfs:domain :BasicSecurityPolicy .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#usingWorkstationId
+:usingWorkstationId rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :UserIdentity ;
+                    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Authority
+:Authority rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :JurisdictionalOrganization
+                                               :ProviderOrganization
+                                             )
+                               ] ;
+           <http://purl.org/dc/elements/1.1/description> "An authority is an organization (either Jurisdictional or Provider) that is responsible for a Privacy Policy."^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+           rdfs:comment "According to the CSP-DAM: 'This abstract class is used to designate the authority that issues the policy.'"^^xsd:string ;
+           rdfs:label "Authority"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#AuthorizationPolicy
+:AuthorizationPolicy rdf:type owl:Class ;
+                     rdfs:subClassOf :BasicSecurityPolicy ;
+                     <http://purl.org/dc/elements/1.1/description> "An authorization policy defines allowed actions."^^xsd:string ;
+                     <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                     rdfs:label "Authorization Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#BasicSecurityPolicy
+:BasicSecurityPolicy rdf:type owl:Class ;
+                     rdfs:subClassOf :SecurityPolicy ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :governsInformationReference ;
+                                       owl:allValuesFrom :InformationReference
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :governsOperation ;
+                                       owl:allValuesFrom :Operation
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :governsPurposeOfUse ;
+                                       owl:allValuesFrom :PurposeOfUse
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :governsSecurityRole ;
+                                       owl:allValuesFrom :SecurityRole
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :restrictedToRoute ;
+                                       owl:allValuesFrom :Route
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :authenticationLevelOfAssurance ;
+                                       owl:allValuesFrom xsd:integer
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :governsTimeOfDay ;
+                                       owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                           owl:onDatatype xsd:integer ;
+                                                           owl:withRestrictions ( [ xsd:minInclusive 0
+                                                                                  ]
+                                                                                  [ xsd:maxInclusive 86400
+                                                                                  ]
+                                                                                )
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :identityProofingLevelOfAssurance ;
+                                       owl:allValuesFrom xsd:integer
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :thirdPartyLevelOfAssurance ;
+                                       owl:allValuesFrom xsd:integer
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :governsTimeOfDay ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                         owl:onDatatype xsd:integer ;
+                                                         owl:withRestrictions ( [ xsd:minInclusive 0
+                                                                                ]
+                                                                                [ xsd:maxInclusive 86400
+                                                                                ]
+                                                                              )
+                                                       ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :authenticationLevelOfAssurance ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:integer
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :identityProofingLevelOfAssurance ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:integer
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :thirdPartyLevelOfAssurance ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:integer
+                                     ] ;
+                     owl:disjointWith :CompositeSecurityPolicy ;
+                     <http://purl.org/dc/elements/1.1/description> "A basic security policy serves as a common basis for more specific types of security policies, for example authorization, delegation, obligation and refrain policies."^^xsd:string ;
+                     <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                     rdfs:label "Basic Security Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Clearinghouse
+:Clearinghouse rdf:type owl:Class ;
+               rdfs:subClassOf :Organization ;
+               owl:disjointWith :ProviderOrganization ;
+               <http://purl.org/dc/elements/1.1/description> "A clearinghouse is an organization that collects, classifies and/or distributes (healthcare) information."^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+               rdfs:comment "Description derived from Merriam Webster."^^xsd:string ,
+                            "Mentioned in text of CSP-DAM though not specified there as a class."^^xsd:string ;
+               rdfs:label "Clearinghouse"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Client
+:Client rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasPrivacyConsentDirective ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :PrivacyConsentDirective
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        <http://purl.org/dc/elements/1.1/description> "A client is a person who is the subject of a consent directive. [HL7 CSP-DAM]"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+        rdfs:comment "The definition of Client is debatable.  On the other hand, a client with no consent directive arguably has no impact on access control.\""^^xsd:string ;
+        rdfs:label "Client"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ClinicalObservation
+:ClinicalObservation rdf:type owl:Class ;
+                     <http://purl.org/dc/elements/1.1/description> "As a part of the service they provide to patients, medical doctors, nurses and allied health workers compile notes that document the conditions they encounter, the treatments provided and the outcomes of those treatments. [U.S. National Library of Medicine; http://www.nlm.nih.gov/nichsr/usestats/clinical_observation.html; Retrieved on July 29, 2013]"^^xsd:string ;
+                     <http://purl.org/dc/elements/1.1/source> "HL7 HCS"^^xsd:string ;
+                     rdfs:comment "ClinicalObservation is a generalization of the ClinicalCondition class from the HL7 CSP-DAM."^^xsd:string ,
+                                  "Subclasses of ClinicalObservation are specified in ClinicalObservationOntology.owl."^^xsd:string ;
+                     rdfs:label "Clinical Observation"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Compartment
+:Compartment rdf:type owl:Class ;
+             <http://purl.org/dc/elements/1.1/description> "A compartment is a security label tag that \"segments\" an IT resource by indicating that access and use is restricted to members of a defined community or project."^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/source> "HL7 Healthcare Privacy and Security Classification System (HCS)"^^xsd:string ;
+             rdfs:label "Compartment"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#CompositeSecurityPolicy
+:CompositeSecurityPolicy rdf:type owl:Class ;
+                         rdfs:subClassOf :SecurityPolicy ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:allValuesFrom :BasicSecurityPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :BasicSecurityPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :AuthorizationPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :ConstraintPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :DelegationPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :ObligationPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :containsSecurityPolicy ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :RefrainPolicy
+                                         ] ;
+                         <http://purl.org/dc/elements/1.1/description> "A composite security policy combines other policies (authorization, constraint, delegation, obligation, and/or refrain policies)."^^xsd:string ;
+                         <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                         rdfs:label "Composite Security Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Confidentiality
+:Confidentiality rdf:type owl:Class ;
+                 <http://purl.org/dc/elements/1.1/description> "Confidentiality is the property that information is not made available or disclosed to unauthorized individuals. [per ISO 7498-2:1989]"^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM, which cites ISO 7498-2:1989."^^xsd:string ;
+                 rdfs:comment "Subclasses of Confidentiality are specified in ConfidentialityOntology.owl."^^xsd:string ;
+                 rdfs:label "Confidentiality"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Consenter
+:Consenter rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :isConsenterFor ;
+                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass :Client
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ,
+                               [ owl:intersectionOf ( :Person
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty [ owl:inverseOf :hasConsenter
+                                                                       ] ;
+                                                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass :PrivacyConsentDirective
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasWrittenSignatureRecorded ;
+                             owl:allValuesFrom xsd:boolean
+                           ] ;
+           <http://purl.org/dc/elements/1.1/description> "A Consenter is a person who is an individual client of healthcare services or a client delegate (Substitute Decision Maker) that uses a computer system to manage client privacy consent directives."^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+           rdfs:label "Consenter"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Constraint
+:Constraint rdf:type owl:Class ;
+            <http://purl.org/dc/elements/1.1/description> "A constraint is a restriction (condition or obligation) that is enforced upon access permissions."^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/source> "ANSI/INCITS 359-2004"^^xsd:string ;
+            rdfs:comment "In the future, subclasses of Constraint may be moved to a separate sub-ontology."^^xsd:string ;
+            rdfs:label "Constraint"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ConstraintCatalog
+:ConstraintCatalog rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :catalogsConstraint ;
+                                     owl:allValuesFrom :Constraint
+                                   ] ;
+                   <http://purl.org/dc/elements/1.1/description> "A constraint catalog is a collection of constraints on permissions (as specified by an organization)."^^xsd:string ;
+                   <http://purl.org/dc/elements/1.1/source> "HL7 RBAC Constraint Catalog"^^xsd:string ;
+                   rdfs:label "Constraint Catalog"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ConstraintPolicy
+:ConstraintPolicy rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :BasicSecurityPolicy
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :constrainsSecurityPolicy ;
+                                                               owl:allValuesFrom :CompositeSecurityPolicy
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :specifiesConstraint ;
+                                                               owl:allValuesFrom :Constraint
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :specifiesConstraint ;
+                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Constraint
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :constrainsSecurityPolicy ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :CompositeSecurityPolicy
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  <http://purl.org/dc/elements/1.1/description> "A constraint policy places constraints on another policy."^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                  rdfs:label "Constraint Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#DataOperation
+:DataOperation rdf:type owl:Class ;
+               rdfs:subClassOf :Operation ;
+               owl:disjointWith :PrivacyOperation ;
+               <http://purl.org/dc/elements/1.1/description> "The DataOperation class categorizes operations from the perspective of their effect on object(s)."^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+               rdfs:comment "Subclasses of DataOperation are specified in CRUDEA_OperationOntology.owl and in turn in DataOperationOntology.owl."^^xsd:string ;
+               rdfs:label "Data Operation"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#DelegationPolicy
+:DelegationPolicy rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :BasicSecurityPolicy
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :specifiesGrantee ;
+                                                               owl:allValuesFrom :Grantee
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :specifiesGrantee ;
+                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Grantee
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  <http://purl.org/dc/elements/1.1/description> "A delegation policy defines what authorizations can be delegated to whom."^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                  rdfs:label "Delegation Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#FunctionalRole
+:FunctionalRole rdf:type owl:Class ;
+                rdfs:subClassOf :SecurityRole ;
+                owl:disjointWith :StructuralRole ;
+                <http://purl.org/dc/elements/1.1/description> "A functional role reflects functional aspects of relationships between entities. Functional roles are bound to the realization/performance of acts."^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                rdfs:comment "[taken from HL7 RBAC Role Engineering Process:] Functional Roles consist of all the permissions (operations on health information system objects) needed to perform a task.  Functional role names are associated with groups of permissions for convenience in assigning to users."^^xsd:string ;
+                rdfs:label "Functional Role"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Grantee
+:Grantee rdf:type owl:Class ;
+         owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Clearinghouse
+                                                                    :Person
+                                                                    :ProviderOrganization
+                                                                  )
+                                                    ]
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty [ owl:inverseOf :specifiesGrantee
+                                                                     ] ;
+                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                    ]
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] ;
+         <http://purl.org/dc/elements/1.1/description> "A grantee is a person or organization given privilege(s), e.g., by a delegation policy."^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+         rdfs:label "Grantee"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#HealthRecord
+:HealthRecord rdf:type owl:Class ;
+              rdfs:subClassOf :Object ;
+              <http://purl.org/dc/elements/1.1/description> "A health record stores healthcare information about a person."^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+              rdfs:label "Health Record"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#InformationReference
+:InformationReference rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasClinicalObservation ;
+                                        owl:allValuesFrom :ClinicalObservation
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasCompartment ;
+                                        owl:allValuesFrom :Compartment
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasConfidentiality ;
+                                        owl:allValuesFrom :Confidentiality
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasCustodian ;
+                                        owl:allValuesFrom :ProviderOrganization
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasIntegrity ;
+                                        owl:allValuesFrom :Integrity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasObject ;
+                                        owl:allValuesFrom :Object
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasPaymentSource ;
+                                        owl:allValuesFrom :PaymentSource
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasRecipient ;
+                                        owl:allValuesFrom :Organization
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasSensitivity ;
+                                        owl:allValuesFrom :Sensitivity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasSubject ;
+                                        owl:allValuesFrom :SubjectOfRecord
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasTimeOfTreatment ;
+                                        owl:allValuesFrom xsd:dateTime
+                                      ] ;
+                      <http://purl.org/dc/elements/1.1/description> "An information reference is a specification of the attributes of protected information referenced by a policy."^^xsd:string ;
+                      <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                      rdfs:label "Information Reference"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Integrity
+:Integrity rdf:type owl:Class ;
+           <http://purl.org/dc/elements/1.1/description> "Integrity is the attribute that information is not altered in any way, deliberately or accidentally."^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+           rdfs:comment "Made a meaningless change in the wording of the ISO definition, from 'property' to 'attribute' to avoid confusion with OWL properties."^^xsd:string ,
+                        "Subclasses of Integrity are specified in IntegrityOntology.owl."^^xsd:string ;
+           rdfs:label "Integrity"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#InterorganizationalAgreement
+:InterorganizationalAgreement rdf:type owl:Class ;
+                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasOrganization ;
+                                                owl:allValuesFrom :Organization
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasOrganization ;
+                                                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                owl:onClass :Organization
+                                              ] ;
+                              <http://purl.org/dc/elements/1.1/description> "An interorganizational agreement specifies (security and privacy) arrangements among organizations."^^xsd:string ;
+                              <http://purl.org/dc/elements/1.1/source> "'Refrain Policy Vocabulary' presentation to HL7 Security WG by Kathleen Connor in November 2011."^^xsd:string ;
+                              rdfs:label "Interorganizational Agreement"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Jurisdiction
+:Jurisdiction rdf:type owl:Class ;
+              <http://purl.org/dc/elements/1.1/description> "A jurisdiction is an area with a set of laws under the control of a system of courts which are different to neighboring areas."^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+              rdfs:comment "In the future, instances of Jurisdiction may be defined in a separate sub-ontology.  For now, sample instances  are included within SomewhereHospitalOntology.owl."^^xsd:string ;
+              rdfs:label "Jurisdiction"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#JurisdictionalOrganization
+:JurisdictionalOrganization rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Organization
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasJurisdiction ;
+                                                                         owl:allValuesFrom :Jurisdiction
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :hasJurisdiction ;
+                                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass :Jurisdiction
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            <http://purl.org/dc/elements/1.1/description> "A jurisdictional organization is an organization that has territorial authority."^^xsd:string ;
+                            <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                            rdfs:label "Jurisdictional Organization"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :isLocationForOrganization ;
+                            owl:allValuesFrom :Organization
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isLocationForOrganization ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Organization
+                          ] ;
+          <http://purl.org/dc/elements/1.1/description> "A location is a site (such as a physical place or a system, workstation or terminal in a network)."^^xsd:string ;
+          <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+          rdfs:comment "It is expected that specific organizations will create and maintain their own subclasses and instances of Location."^^xsd:string ,
+                       "Should an Organization have a LocationSet to capture the locations which it may use in policies to control access?"^^xsd:string ;
+          rdfs:label "Location"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasIdentifier ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasIdentifier ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        <http://purl.org/dc/elements/1.1/description> "An object is an entity that contains or receives information.  An object can represent information containers (e.g., files or directories in an operating system, and/or columns, rows, tables, and views within a database management system) or objects can represent exhaustible system resources, such as printers, disk space, and CPU cycles."^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/source> "HL7 RBAC (based on ANSI/INCITS 359-2004)"^^xsd:string ;
+        rdfs:comment "Subclasses of Object are specified in ObjectOntology.owl."^^xsd:string ;
+        rdfs:label "Object"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Obligation
+:Obligation rdf:type owl:Class ;
+            <http://purl.org/dc/elements/1.1/description> "An obligation represents a resposibility to follow a course of action."^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+            rdfs:comment "Subclasses of Obligation are specified in ObligationOntology.owl."^^xsd:string ;
+            rdfs:label "Obligation"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ObligationPolicy
+:ObligationPolicy rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :BasicSecurityPolicy
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :specifiesObligation ;
+                                                               owl:allValuesFrom :Obligation
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :specifiesObligation ;
+                                                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Obligation
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  <http://purl.org/dc/elements/1.1/description> "An obligation policy is event-triggered and defines actions to be performed by manager agents."^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                  rdfs:comment "ISO 22600-2 describes obligation policy in terms of manager agents but says nothing about the latter."^^xsd:string ;
+                  rdfs:label "Obligation Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Operation
+:Operation rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :operatesOnObject ;
+                             owl:allValuesFrom :Object
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :operatesOnObject ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Object
+                           ] ;
+           <http://purl.org/dc/elements/1.1/description> "To operate is to act on an object or objects.  An operation is an executable image of a program, which upon invocation executes some function for the user.  Within a file system, operations might include read, write, and execute.  Within a database management system, operations might include append, delete, and update."^^xsd:string ;
+           <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+           rdfs:comment "For the Security and Privacy Ontology in general, we have adopted 'CamelCase' naming which differd slightly from the HL7 RBAC Permission Catalog and from the HL7 vocabulary repository (which also differ from each other)."^^xsd:string ;
+           rdfs:label "Operation"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasConstraintCatalog ;
+                                owl:allValuesFrom :ConstraintCatalog
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasPolicy ;
+                                owl:allValuesFrom :Policy
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasPrivacyPolicy ;
+                                owl:allValuesFrom :PrivacyPolicy
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasRoleSet ;
+                                owl:allValuesFrom :RoleSet
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasSecurityPolicy ;
+                                owl:allValuesFrom :SecurityPolicy
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasUserAssignmentSet ;
+                                owl:allValuesFrom :UserAssignmentSet
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasConstraintCatalog ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ConstraintCatalog
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasRoleSet ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :RoleSet
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasUserAssignmentSet ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :UserAssignmentSet
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasDigitalSignature ;
+                                owl:allValuesFrom xsd:base64Binary
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasDomainName ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasIdentifier ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasName ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasName ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ;
+              <http://purl.org/dc/elements/1.1/description> "An organization is an administrative and/or functional entity."^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+              rdfs:comment "In the Composite Security and Privacy DAM, a generalization of JurisdictionalOrganization and ProviderOrganization is named 'Authority'.  However, ISO 22600-2 defines Authority as 'entity that is responsible for the issuance of certificates'."^^xsd:string ,
+                           "It is expected that specific organizations will create and maintain their own sub-ontology which imports SecurityAndPrivacyOntology.owl along with some or all of the accompanying subontologies and adds suitable local instances of classes."^^xsd:string ,
+                           "Organization has exactly one role set per conversation with M. Davis et al., 08/24/2010."^^xsd:string ,
+                           "Textual description derived from Merriam Webster."^^xsd:string ;
+              rdfs:label "Organization"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PaymentSource
+:PaymentSource rdf:type owl:Class ;
+               <http://purl.org/dc/elements/1.1/description> "A payment source is the provider of payment for the healthcare services documented by electronic health records."^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+               rdfs:comment "Subclasses of PaymentSource are specified in PaymentSourceOntology.owl."^^xsd:string ,
+                            "The CSP-DAM names the class PolicyProgramPaymentSource but its decription is strictly in terms of payment."^^xsd:string ;
+               rdfs:label "Payment Source"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCitizenship ;
+                          owl:allValuesFrom :Jurisdiction
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPrivacyConsentDirective ;
+                          owl:allValuesFrom :PrivacyConsentDirective
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDigitalSignature ;
+                          owl:allValuesFrom xsd:base64Binary
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasIdentifier ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasName ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasName ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        <http://purl.org/dc/elements/1.1/description> "A person is a human being."^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/source> "De novo"^^xsd:string ;
+        rdfs:comment "Obvious generalization of Client, Consenter and similar classes."^^xsd:string ;
+        rdfs:label "Person"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Policy
+:Policy rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAuthority ;
+                          owl:allValuesFrom :Authority
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAuthority ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Authority
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasEffectiveTime ;
+                          owl:allValuesFrom xsd:dateTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasIdentifier ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasName ;
+                          owl:allValuesFrom xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPublicationURI ;
+                          owl:allValuesFrom xsd:anyURI
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasIdentifier ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasEffectiveTime ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:dateTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasName ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPublicationURI ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:anyURI
+                        ] ;
+        <http://purl.org/dc/elements/1.1/description> "A policy is a set of legal, political, organizational, functional and technical obligations or omissions for communication and cooperation.  [ISO 22600-3]"^^xsd:string ;
+        <http://purl.org/dc/elements/1.1/source> "ISO 22600-3"^^xsd:string ;
+        rdfs:label "Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Population
+:Population rdf:type owl:Class ;
+            <http://purl.org/dc/elements/1.1/description> "A population is a subject of privacy policy or consent which is a body of persons or individuals having a quality or characteristic in common."^^xsd:string ;
+            <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+            rdfs:label "Population"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyConsentDirective
+:PrivacyConsentDirective rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty :basedOnPrivacyPolicy ;
+                                           owl:allValuesFrom :PrivacyPolicy
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasConsenter ;
+                                           owl:allValuesFrom :Person
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPrivacyRule ;
+                                           owl:allValuesFrom :PrivacyRule
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasSubjectOfConsent ;
+                                           owl:allValuesFrom :Client
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPrivacyRule ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :PrivacyRule
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasSubjectOfConsent ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass :Client
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasEffectiveTime ;
+                                           owl:allValuesFrom xsd:dateTime
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasIdentifier ;
+                                           owl:allValuesFrom xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPublicationURI ;
+                                           owl:allValuesFrom xsd:anyURI
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasIdentifier ;
+                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasEffectiveTime ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:dateTime
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasPublicationURI ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:anyURI
+                                         ] ;
+                         <http://purl.org/dc/elements/1.1/description> "A privacy consent directive is special policy which defines an agreement between an entity playing the role of the subject of an act and an entity acting. [ISO 22600-3]"^^xsd:string ;
+                         <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                         rdfs:comment "According to the CSP-DAM: 'A Privacy Consent Directive is defined as 'an instruction regarding consent and contextual conditions to collect, use, and/or disclose Personal Health Information.' This definition is adapted from the British Columbia, E-Health (Personal Health Information Access and Protection of Privacy) Act, S.B.C. 2008, c. 38, s. 1.'"^^xsd:string ;
+                         rdfs:label "Privacy Consent Directive"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyOperation
+:PrivacyOperation rdf:type owl:Class ;
+                  rdfs:subClassOf :Operation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :authorizedBy ;
+                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( :InterorganizationalAgreement
+                                                                      :Jurisdiction
+                                                                      :Organization
+                                                                      :Person
+                                                                    )
+                                                      ]
+                                  ] ;
+                  <http://purl.org/dc/elements/1.1/description> "The PrivacyOperation class categorizes operations from the perspective of their effect on the privacy of (health) information."^^xsd:string ;
+                  <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                  rdfs:comment "Subclasses of PrivacyOperation are specified in PrivacyOperationOntology.owl."^^xsd:string ;
+                  rdfs:label "Privacy Operation"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyPolicy
+:PrivacyPolicy rdf:type owl:Class ;
+               rdfs:subClassOf :Policy ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasPrivacyRule ;
+                                 owl:allValuesFrom :PrivacyRule
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :specifiesGrantee ;
+                                 owl:allValuesFrom :Grantee
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasPrivacyRule ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :PrivacyRule
+                               ] ;
+               owl:disjointWith :SecurityPolicy ;
+               <http://purl.org/dc/elements/1.1/description> "A privacy policy is a policy that is concerned with information privacy practices."^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+               rdfs:label "Privacy Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyRule
+:PrivacyRule rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :createsObligation ;
+                               owl:allValuesFrom :Obligation
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :governsInformationReference ;
+                               owl:allValuesFrom :InformationReference
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :governsOperation ;
+                               owl:allValuesFrom :Operation
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :governsPurposeOfUse ;
+                               owl:allValuesFrom :PurposeOfUse
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :governsSecurityRole ;
+                               owl:allValuesFrom :SecurityRole
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :governsOperation ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Operation
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :governsSecurityRole ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :SecurityRole
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasEffectiveTime ;
+                               owl:allValuesFrom xsd:dateTime
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasEffectiveTime ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:dateTime
+                             ] ;
+             <http://purl.org/dc/elements/1.1/description> "A privacy rule specifies permission or obligation to treat information in accord with privacy wishes."^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+             rdfs:label "Privacy Rule"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ProviderOrganization
+:ProviderOrganization rdf:type owl:Class ;
+                      rdfs:subClassOf :Organization ;
+                      <http://purl.org/dc/elements/1.1/description> "A provider organization is an organization that furnishes healthcare."^^xsd:string ;
+                      <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                      rdfs:label "Provider Organization"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PurposeOfUse
+:PurposeOfUse rdf:type owl:Class ;
+              <http://purl.org/dc/elements/1.1/description> "A purpose of use is an intention for which an object is accessed."^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+              rdfs:comment "Subclasses of PurposeOfUse are specified in PurposeOfUseOntology.owl."^^xsd:string ;
+              rdfs:label "Purpose of Use"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Refrain
+:Refrain rdf:type owl:Class ;
+         <http://purl.org/dc/elements/1.1/description> "A refrain represents a responsibility to not follow a course of action."^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/source> "HL7 v3 RefrainPolicy value set."^^xsd:string ;
+         rdfs:comment "Subclasses of Refrain are specified in RefrainOntology.owl."^^xsd:string ;
+         rdfs:label "Refrain"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#RefrainPolicy
+:RefrainPolicy rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :BasicSecurityPolicy
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :specifiesRefrain ;
+                                                            owl:allValuesFrom :Refrain
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :specifiesRefrain ;
+                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :Refrain
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               <http://purl.org/dc/elements/1.1/description> "A refrain policy is a policy used to indicate that a specific action is prohibited based on specific access control attributes (e.g., purpose of use, information type, user role, etc.)."^^xsd:string ;
+               <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+               rdfs:label "Refrain Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#RoleSet
+:RoleSet rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :includesSecurityRole ;
+                           owl:allValuesFrom :SecurityRole
+                         ] ;
+         <http://purl.org/dc/elements/1.1/description> "A role set is a collection of roles (as specified by an organization)."^^xsd:string ;
+         <http://purl.org/dc/elements/1.1/source> "De novo"^^xsd:string ;
+         rdfs:label "Role Set"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Route
+:Route rdf:type owl:Class ;
+       <http://purl.org/dc/elements/1.1/description> "A route is a sequence of links, and/or partial links, that describe a path, usually between two positions, within a network [ISO 19133:2005] [ISO 19134:2007, 4.11]"^^xsd:string ;
+       <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+       rdfs:comment "Subclasses of Route are specified in RouteOntology.owl."^^xsd:string ;
+       rdfs:label "Route"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SecurityPolicy
+:SecurityPolicy rdf:type owl:Class ;
+                rdfs:subClassOf :Policy ;
+                <http://purl.org/dc/elements/1.1/description> "A security policy is a policy that is concerned with information security practices."^^xsd:string ,
+                                                              "A set of rules laid down by the security authority governing the use and provision of security services and facilities [ISO/TS 22600-3:2009(E)]"^^xsd:string ,
+                                                              "A set of rules that constrains one or more sets of activities of one or more sets of objects [ISO/IEC 10746-3]"^^xsd:string ,
+                                                              "plan or course of action adopted for providing computer security [ISO/TS 22600-1:2006(E), ISO/TS 22600-2:2006(E), and ISO/TS 22600-3:2009(E)]"^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                rdfs:comment "The Composite Security and Privacy DAM has a class named 'Policy' but refers in text to the more specific notion of 'Security Policy'."^^xsd:string ;
+                rdfs:label "Security Policy"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SecurityRole
+:SecurityRole rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasName ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasName ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ;
+              <http://purl.org/dc/elements/1.1/description> "A role is set of competences and/or performances that are associated with a task."^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/source> "ISO/TS 21298:2008(E) and ANSI/INCITS 359-2004"^^xsd:string ;
+              rdfs:comment "'Role' is considered a synonym for this 'SecurityRole' class per the 08/24/2010 meeting of the Security WG."^^xsd:string ,
+                           "Roles provide a means of indirectly assigning privileges to individuals."^^xsd:string ,
+                           "Subclasses of SecurityRole are specified in RoleOntology.owl."^^xsd:string ;
+              rdfs:label "Security Role"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Sensitivity
+:Sensitivity rdf:type owl:Class ;
+             <http://purl.org/dc/elements/1.1/description> "Sensitivity specifies the characteristic of a resource which implies its value or importance, and may include its vulnerability [ISO 7498-2:1989]. Vulnerability here is defined as medically vulnerable with respect to privacy, subject to social stigmatization."^^xsd:string ;
+             <http://purl.org/dc/elements/1.1/source> "ISO 7498-2:1989"^^xsd:string ;
+             rdfs:comment "Subclasses of Sensitivity are specified in SensitivityOntology.owl."^^xsd:string ;
+             rdfs:label "Sensitivity"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SeparationOfDutyConstraint
+:SeparationOfDutyConstraint rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( :Constraint
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :separatesSecurityRole ;
+                                                                         owl:allValuesFrom :SecurityRole
+                                                                       ]
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :separatesSecurityRole ;
+                                                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                         owl:onClass :SecurityRole
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            <http://purl.org/dc/elements/1.1/description> "A separation of duty constraint is a constraint that defines exclusivity relations among roles."^^xsd:string ;
+                            <http://purl.org/dc/elements/1.1/source> "ANSI/INCITS 359-2004"^^xsd:string ;
+                            rdfs:label "Separation of Duty Constraint"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ServiceDeliveryLocation
+:ServiceDeliveryLocation rdf:type owl:Class ;
+                         rdfs:subClassOf :Location ;
+                         <http://purl.org/dc/elements/1.1/description> "A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered."^^xsd:string ;
+                         <http://purl.org/dc/elements/1.1/source> "HL7 v3 ServiceDeliveryLocationRoleType value set"^^xsd:string ;
+                         rdfs:comment "Subclasses of ServiceDeliveryLocation are specified in ServiceDeliveryLocationOntology.owl."^^xsd:string ;
+                         rdfs:label "Service Delivery Location"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#StructuralRole
+:StructuralRole rdf:type owl:Class ;
+                rdfs:subClassOf :SecurityRole ;
+                <http://purl.org/dc/elements/1.1/description> "A structural role reflects the structural aspects of relationships between entities.  Structural roles describe prerequisites, feasibilities or competences for acts."^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/source> "ISO 22600-2"^^xsd:string ;
+                rdfs:comment "According to the HL7 CSP-DAM: A structural role is a security role that places a user in an organizational hierarchy as belonging to a category of healthcare personnel warranting certain levels of access control: Structural roles allow users to participate in the organization’s workflow (e.g., tasks) by job, title, or position, but do not specify detailed permissions on specific information objects.  Structural roles allow a user to “connect” to a resource, but do not grant authorizations."^^xsd:string ;
+                rdfs:label "Structural Role"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SubjectOfRecord
+:SubjectOfRecord rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                              owl:unionOf ( :Person
+                                                                            :Population
+                                                                          )
+                                                            ]
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty [ owl:inverseOf :hasSubject
+                                                                             ] ;
+                                                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass :InformationReference
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 <http://purl.org/dc/elements/1.1/description> "A subject of [a] record is a person or population described by a health record (record object)."^^xsd:string ;
+                 <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+                 rdfs:label "Subject of Record"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#UserAssignment
+:UserAssignment rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :assignsSecurityRole ;
+                                  owl:allValuesFrom :SecurityRole
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :assignsUserIdentity ;
+                                  owl:allValuesFrom :UserIdentity
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :assignsUserIdentity ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :UserIdentity
+                                ] ;
+                <http://purl.org/dc/elements/1.1/description> "A user assignment is an association of a user with role(s) he or she is allowed to assume."^^xsd:string ;
+                <http://purl.org/dc/elements/1.1/source> "ANSI/INCITS 359-2004"^^xsd:string ;
+                rdfs:comment "It is expected that specific organizations will create and maintain their own instances of UserAssignment."^^xsd:string ;
+                rdfs:label "User Assignment"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#UserAssignmentSet
+:UserAssignmentSet rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :includesUserAssignment ;
+                                     owl:allValuesFrom :UserAssignment
+                                   ] ;
+                   <http://purl.org/dc/elements/1.1/description> "A user assignment set is a collection of assignments of users to roles (as specified by an organization)."^^xsd:string ;
+                   <http://purl.org/dc/elements/1.1/source> "De novo"^^xsd:string ;
+                   rdfs:label "User Assignment Set"^^xsd:string .
+
+
+###  http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#UserIdentity
+:UserIdentity rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowedLoginLocation ;
+                                owl:allValuesFrom :Location
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasCurrentLocation ;
+                                owl:allValuesFrom :Location
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :allowedLoginTimeOfDay ;
+                                owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                    owl:onDatatype xsd:integer ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive 0
+                                                                           ]
+                                                                           [ xsd:maxInclusive 86400
+                                                                           ]
+                                                                         )
+                                                  ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :authenticationLevelOfAssurance ;
+                                owl:allValuesFrom xsd:integer
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasIdentifier ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasName ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :identityProofingLevelOfAssurance ;
+                                owl:allValuesFrom xsd:integer
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :usingWorkstationId ;
+                                owl:allValuesFrom xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasIdentifier ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasName ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :authenticationLevelOfAssurance ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :identityProofingLevelOfAssurance ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:integer
+                              ] ;
+              <http://purl.org/dc/elements/1.1/description> "A user identity is the representation of a human being in an information system."^^xsd:string ;
+              <http://purl.org/dc/elements/1.1/source> "HL7 Composite Security and Privacy DAM"^^xsd:string ;
+              rdfs:label "User Identity"^^xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AuthorizationPolicy
+                :ConstraintPolicy
+                :DelegationPolicy
+                :ObligationPolicy
+                :RefrainPolicy
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ClinicalObservation
+                :Compartment
+                :Confidentiality
+                :Constraint
+                :ConstraintCatalog
+                :InformationReference
+                :Integrity
+                :InterorganizationalAgreement
+                :Jurisdiction
+                :Location
+                :Object
+                :Obligation
+                :Operation
+                :Organization
+                :PaymentSource
+                :Person
+                :Policy
+                :Population
+                :PrivacyConsentDirective
+                :PrivacyRule
+                :PurposeOfUse
+                :Refrain
+                :RoleSet
+                :Route
+                :SecurityRole
+                :Sensitivity
+                :UserAssignment
+                :UserAssignmentSet
+                :UserIdentity
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
