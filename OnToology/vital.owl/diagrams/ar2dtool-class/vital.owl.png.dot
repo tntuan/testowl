@@ -1,0 +1,34 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "vital:TrustedEntity" "vital:ConnectionStability" "dul:Entity" "vital:TrustConcept" "vital:CEPFilterSensor" "vital:VitalSystem" "ssn:IotSystem" "ssn:Sensor" "vital:OperationalState" "vital:CEPFilterStaticDataSensor" "vital:MovementPattern" "hard:DeviceHardware" "vital:ServiceRequest" "vital:CEPFilterStaticQuerySensor" "vital:NetworkConnection" "vital:VitalSensor" "net:NetworkSupport" "msm:Service" "vital:Line" "hard:HardwareStatus" ; /*classes style*/
+	"vital:hasLocalizer" -> "ssn:hasSubSystem" [ label = "rdfs:subPropertyOf" ];
+	"vital:hasNetworkConnection" -> "ssn:hasSubSystem" [ label = "rdfs:subPropertyOf" ];
+	"vital:hasNetworkSupport" -> "net:networkSupport" [ label = "rdfs:subPropertyOf" ];
+	"vital:hasLastKnownLocation" -> "dul:hasLocation" [ label = "rdfs:subPropertyOf" ];
+	"vital:providesSystem" -> "ssn:hasSubSystem" [ label = "rdfs:subPropertyOf" ];
+	"vital:" -> "http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html" [ label = "terms:license" ];
+	"vital:TrustConcept" -> "xsd:float" [ label = "vital:weight" ];
+	"vital:CEPFilterSensor" -> "xsd:string" [ label = "vital:dolceSpecification" ];
+	"vital:ServiceRequest" -> "owl:Thing" [ label = "vital:madeBy" ];
+	"hard:DeviceHardware" -> "hard:HardwareStatus" [ label = "hard:status" ];
+	"ssn:IotSystem" -> "vital:OperationalState" [ label = "vital:status" ];
+	"vital:Line" -> "dul:Entity" [ label = "vital:name" ];
+	"vital:Line" -> "dul:Entity" [ label = "vital:direction" ];
+	"ssn:IotSystem" -> "xsd:string" [ label = "vital:hasName" ];
+	"ssn:Sensor" -> "net:NetworkSupport" [ label = "vital:hasNetworkSupport" ];
+	"ssn:IotSystem" -> "dul:Entity" [ label = "vital:operator" ];
+	"vital:NetworkConnection" -> "vital:ConnectionStability" [ label = "vital:hasStability" ];
+	"ssn:IotSystem" -> "vital:VitalSensor" [ label = "vital:managesSensor" ];
+	"vital:TrustedEntity" -> "xsd:float" [ label = "vital:TrustLevel" ];
+	"ssn:Sensor" -> "vital:MovementPattern" [ label = "vital:hasMovementPattern" ];
+	"ssn:Sensor" -> "msm:Service" [ label = "vital:hasLocalizer" ];
+	"ssn:Sensor" -> "vital:NetworkConnection" [ label = "vital:hasNetworkConnection" ];
+	"vital:VitalSensor" -> "dul:Entity" [ label = "vital:hasLastKnownLocation" ];
+	"vital:VitalSystem" -> "ssn:IotSystem" [ label = "vital:providesSystem" ];
+	"vital:CEPFilterStaticQuerySensor" -> "xsd:string" [ label = "vital:query" ];
+	"ssn:IotSystem" -> "dul:Entity" [ label = "vital:serviceArea" ];
+	"ssn:IotSystem" -> "msm:Service" [ label = "vital:providesService" ];
+	"vital:CEPFilterStaticDataSensor" -> "xsd:string" [ label = "vital:data" ];
+
+}

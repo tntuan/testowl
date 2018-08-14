@@ -1,0 +1,522 @@
+{
+  "@context" : {
+    "RailArrival" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/RailArrival"
+    },
+    "hasMovementPattern" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasMovementPattern",
+      "@type" : "@id"
+    },
+    "GetPerformanceMetrics" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetPerformanceMetrics"
+    },
+    "ActiveRequests" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ActiveRequests"
+    },
+    "TrustParam" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustParam"
+    },
+    "hasNetworkConnection" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasNetworkConnection",
+      "@type" : "@id"
+    },
+    "StartingUp" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/StartingUp"
+    },
+    "Operational" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Operational"
+    },
+    "GetSensorStatus" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetSensorStatus"
+    },
+    "networkSupport" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/network.owl#networkSupport",
+      "@type" : "@id"
+    },
+    "GetSupportedSLAParameters" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetSupportedSLAParameters"
+    },
+    "Line" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Line"
+    },
+    "MonitoringSensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/MonitoringSensor"
+    },
+    "TrustEntity" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustEntity"
+    },
+    "GetSystemStatus" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetSystemStatus"
+    },
+    "GetSupportedPerformanceMetrics" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetSupportedPerformanceMetrics"
+    },
+    "RecreationManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/RecreationManagement"
+    },
+    "FilteringService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/FilteringService"
+    },
+    "GetConfiguration" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetConfiguration"
+    },
+    "Request" : {
+      "@id" : "http://www.w3.org/2011/http#Request"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "deviceSoftware" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/software.owl#deviceSoftware",
+      "@type" : "@id"
+    },
+    "CEPICOManagementService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CEPICOManagementService"
+    },
+    "GetOperation" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetOperation"
+    },
+    "CreateOperation" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CreateOperation"
+    },
+    "ServedRequests" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ServedRequests"
+    },
+    "AvailableDesks" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/AvailableDesks"
+    },
+    "ResamplingFilter" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ResamplingFilter"
+    },
+    "UpdateWorkflow" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/UpdateWorkflow"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "CreateWorkflow" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CreateWorkflow"
+    },
+    "CreateContinuousFilter" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CreateContinuousFilter"
+    },
+    "TrustLevel" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustLevel",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "ConfigurationService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ConfigurationService"
+    },
+    "hasName" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ComplexEvent" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ComplexEvent"
+    },
+    "GetObservations" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetObservations"
+    },
+    "GetSLAParameters" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetSLAParameters"
+    },
+    "GetOperationList" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetOperationList"
+    },
+    "dolceSpecification" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/dolceSpecification",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "operator" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/operator",
+      "@type" : "@id"
+    },
+    "UpdateOperation" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/UpdateOperation"
+    },
+    "Predicted" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Predicted"
+    },
+    "query" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/query",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "EnergyManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/EnergyManagement"
+    },
+    "TrustedEntity" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustedEntity"
+    },
+    "DiscoveryService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DiscoveryService"
+    },
+    "NO2" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/NO2"
+    },
+    "CEPFilteringService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CEPFilteringService"
+    },
+    "MovementPattern" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/MovementPattern"
+    },
+    "CEPFilterStaticDataSensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor"
+    },
+    "Operation" : {
+      "@id" : "http://iserve.kmi.open.ac.uk/ns/msm#Operation"
+    },
+    "DeleteWorkflow" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DeleteWorkflow"
+    },
+    "providesService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/providesService",
+      "@type" : "@id"
+    },
+    "SysLoad" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/SysLoad"
+    },
+    "ObservationService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ObservationService"
+    },
+    "DeleteContinuousFilter" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DeleteContinuousFilter"
+    },
+    "managesSensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/managesSensor",
+      "@type" : "@id"
+    },
+    "DiscoverICOs" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DiscoverICOs"
+    },
+    "Intermittent" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Intermittent"
+    },
+    "Stationary" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Stationary"
+    },
+    "Person" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Person"
+    },
+    "GetCEPICO" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetCEPICO"
+    },
+    "EmergencyServices" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/EmergencyServices"
+    },
+    "Unavailable" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Unavailable"
+    },
+    "DiscoverSystems" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DiscoverSystems"
+    },
+    "UnsubscribeFromObservationStream" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/UnsubscribeFromObservationStream"
+    },
+    "name" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/name",
+      "@type" : "@id"
+    },
+    "DiscoverServices" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DiscoverServices"
+    },
+    "DeviceHardware" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware"
+    },
+    "TotalDocks" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TotalDocks"
+    },
+    "Disconnected" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Disconnected"
+    },
+    "Model" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Model"
+    },
+    "PendingRequests" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/PendingRequests"
+    },
+    "TrafficManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrafficManagement"
+    },
+    "DeviceSoftware" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/elements/1.1/rights"
+    },
+    "FilterStaticQuery" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/FilterStaticQuery"
+    },
+    "ResponseTime" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ResponseTime"
+    },
+    "direction" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/direction",
+      "@type" : "@id"
+    },
+    "BusArrival" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/BusArrival"
+    },
+    "GetCEPICOs" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetCEPICOs"
+    },
+    "status" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/hardware.owl#status",
+      "@type" : "@id"
+    },
+    "FilterStaticData" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/FilterStaticData"
+    },
+    "GetContinuousFilter" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetContinuousFilter"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/elements/1.1/identifier"
+    },
+    "hasSubSystem" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem",
+      "@type" : "@id"
+    },
+    "hasLocalizer" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasLocalizer",
+      "@type" : "@id"
+    },
+    "VitalSensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/VitalSensor"
+    },
+    "TransportManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TransportManagement"
+    },
+    "CEPFilterStaticQuerySensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor"
+    },
+    "UndeployMetaService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/UndeployMetaService"
+    },
+    "MonitoringService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/MonitoringService"
+    },
+    "HealthManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/HealthManagement"
+    },
+    "GetWorkflowList" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetWorkflowList"
+    },
+    "Continuous" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Continuous"
+    },
+    "CEPFilterSensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CEPFilterSensor"
+    },
+    "Footfall" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Footfall"
+    },
+    "AvailableBikes" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/AvailableBikes"
+    },
+    "Aspect" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Aspect"
+    },
+    "ThresholdFilter" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ThresholdFilter"
+    },
+    "Property" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Property"
+    },
+    "AirManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/AirManagement"
+    },
+    "ConnDMS" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ConnDMS"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "OperationalState" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/OperationalState"
+    },
+    "Mobile" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Mobile"
+    },
+    "TrustAspect" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustAspect"
+    },
+    "SetConfiguration" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/SetConfiguration"
+    },
+    "SmartCity" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/SmartCity"
+    },
+    "TrustedModel" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustedModel"
+    },
+    "Arrival" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Arrival"
+    },
+    "MaxRequests" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/MaxRequests"
+    },
+    "NetworkSupport" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport"
+    },
+    "hasLastKnownLocation" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasLastKnownLocation",
+      "@type" : "@id"
+    },
+    "WaterManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/WaterManagement"
+    },
+    "SysUptime" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/SysUptime"
+    },
+    "GetMetaServiceList" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetMetaServiceList"
+    },
+    "DeleteCEPICO" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DeleteCEPICO"
+    },
+    "DeployMetaService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/DeployMetaService"
+    },
+    "Running" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Running"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "NetworkConnection" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/NetworkConnection"
+    },
+    "Entity" : {
+      "@id" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"
+    },
+    "EmptyDocks" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/EmptyDocks"
+    },
+    "GetMetaService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetMetaService"
+    },
+    "ConnectionStability" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ConnectionStability"
+    },
+    "FootfallUp" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/FootfallUp"
+    },
+    "hasStability" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasStability",
+      "@type" : "@id"
+    },
+    "TubeArrival" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TubeArrival"
+    },
+    "providesSystem" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/providesSystem",
+      "@type" : "@id"
+    },
+    "GetContinuousFilters" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/GetContinuousFilters"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "serviceArea" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/serviceArea",
+      "@type" : "@id"
+    },
+    "Service" : {
+      "@id" : "http://iserve.kmi.open.ac.uk/ns/msm#Service"
+    },
+    "ExecuteOperation" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ExecuteOperation"
+    },
+    "Group" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Group"
+    },
+    "System" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#System"
+    },
+    "HardwareStatus" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus"
+    },
+    "ServiceRequest" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ServiceRequest"
+    },
+    "CEPSensor" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CEPSensor"
+    },
+    "IotSystem" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#IotSystem"
+    },
+    "Device" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"
+    },
+    "data" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/data",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "CreateCEPICO" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/CreateCEPICO"
+    },
+    "deviceHardware" : {
+      "@id" : "http://www.w3.org/2007/uwa/context/hardware.owl#deviceHardware",
+      "@type" : "@id"
+    },
+    "UsedMem" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/UsedMem"
+    },
+    "Availability" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Availability"
+    },
+    "hasLocation" : {
+      "@id" : "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation",
+      "@type" : "@id"
+    },
+    "VitalSystem" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/VitalSystem"
+    },
+    "WasteManagement" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/WasteManagement"
+    },
+    "madeBy" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/madeBy",
+      "@type" : "@id"
+    },
+    "hasNetworkSupport" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/hasNetworkSupport",
+      "@type" : "@id"
+    },
+    "SubscribeToObservationStream" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/SubscribeToObservationStream"
+    },
+    "AvailableMem" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/AvailableMem"
+    },
+    "weight" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/weight",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "ExecuteWorkflow" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ExecuteWorkflow"
+    },
+    "TrustConcept" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/TrustConcept"
+    },
+    "FootfallDown" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/FootfallDown"
+    },
+    "Observation" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Observation"
+    },
+    "ShuttingDown" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/ShuttingDown"
+    },
+    "Sensor" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Sensor"
+    },
+    "Errors" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/Errors"
+    },
+    "OrchestratorService" : {
+      "@id" : "http://vital-iot.eu/ontology/ns/OrchestratorService"
+    }
+  }
+}
