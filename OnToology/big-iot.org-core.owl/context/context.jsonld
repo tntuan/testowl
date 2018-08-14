@@ -1,0 +1,88 @@
+{
+  "@context" : {
+    "ProxyEndpoint" : {
+      "@id" : "http://schema.big-iot.org/core/ProxyEndpoint"
+    },
+    "Thing" : {
+      "@id" : "http://schema.org/Thing"
+    },
+    "Offer" : {
+      "@id" : "http://schema.org/Offer"
+    },
+    "EndpointType" : {
+      "@id" : "http://schema.big-iot.org/core/EndpointType"
+    },
+    "domainIncludes" : {
+      "@id" : "http://schema.org/domainIncludes"
+    },
+    "Consumer" : {
+      "@id" : "http://schema.big-iot.org/core/Consumer"
+    },
+    "inverseOf" : {
+      "@id" : "http://schema.org/inverseOf"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "LibEndpoint" : {
+      "@id" : "http://schema.big-iot.org/core/LibEndpoint"
+    },
+    "OfferingSubscription" : {
+      "@id" : "http://schema.big-iot.org/core/OfferingSubscription"
+    },
+    "Offering" : {
+      "@id" : "http://schema.big-iot.org/core/Offering"
+    },
+    "PricingModel" : {
+      "@id" : "http://schema.big-iot.org/core/PricingModel"
+    },
+    "rangeIncludes" : {
+      "@id" : "http://schema.org/rangeIncludes"
+    },
+    "Provider" : {
+      "@id" : "http://schema.big-iot.org/core/Provider"
+    },
+    "OfferingQuery" : {
+      "@id" : "http://schema.big-iot.org/core/OfferingQuery"
+    },
+    "DataTypeAnnotation" : {
+      "@id" : "http://schema.big-iot.org/core/DataTypeAnnotation"
+    },
+    "BasicData" : {
+      "@id" : "http://schema.big-iot.org/core/BasicData"
+    },
+    "Demand" : {
+      "@id" : "http://schema.org/Demand"
+    },
+    "Endpoint" : {
+      "@id" : "http://schema.big-iot.org/core/Endpoint"
+    },
+    "AccessInterfaceType" : {
+      "@id" : "http://schema.big-iot.org/core/AccessInterfaceType"
+    },
+    "Enumeration" : {
+      "@id" : "http://schema.org/Enumeration"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "License" : {
+      "@id" : "http://schema.big-iot.org/core/License"
+    },
+    "LicenseType" : {
+      "@id" : "http://schema.big-iot.org/core/LicenseType"
+    },
+    "Categorization" : {
+      "@id" : "http://schema.big-iot.org/core/Categorization"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "ExternalEndpoint" : {
+      "@id" : "http://schema.big-iot.org/core/ExternalEndpoint"
+    },
+    "OfferingCategory" : {
+      "@id" : "http://schema.big-iot.org/core/OfferingCategory"
+    }
+  }
+}

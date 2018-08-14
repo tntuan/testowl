@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "ns1:PricingModel" "ns1:AccessInterfaceType" "ns1:OfferingQuery" "ns3:Enumeration" "ns1:Categorization" "ns1:Consumer" "ns3:Demand" "ns1:Endpoint" "ns1:EndpointType" "ns1:License" "ns1:BasicData" "ns3:Offer" "ns1:LibEndpoint" "ns1:Provider" "ns1:OfferingCategory" "ns1:ProxyEndpoint" "ns3:Thing" "ns1:LicenseType" "ns1:OfferingSubscription" "ns1:DataTypeAnnotation" "ns1:Offering" "ns1:ExternalEndpoint" ; /*classes style*/
+	"ns1:OfferingQuery" -> "ns3:Demand" [ label = "rdfs:subClassOf" ];
+	"ns1:Offering" -> "ns3:Offer" [ label = "rdfs:subClassOf" ];
+	"ns1:AccessInterfaceType" -> "ns3:Enumeration" [ label = "rdfs:subClassOf" ];
+	"ns1:PricingModel" -> "ns3:Enumeration" [ label = "rdfs:subClassOf" ];
+	"ns1:LicenseType" -> "ns3:Enumeration" [ label = "rdfs:subClassOf" ];
+	"ns1:OfferingCategory" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:LibEndpoint" -> "ns1:Endpoint" [ label = "rdfs:subClassOf" ];
+	"ns1:Provider" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:License" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:Endpoint" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:ProxyEndpoint" -> "ns1:Endpoint" [ label = "rdfs:subClassOf" ];
+	"ns1:Categorization" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:OfferingSubscription" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:DataTypeAnnotation" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:EndpointType" -> "ns3:Enumeration" [ label = "rdfs:subClassOf" ];
+	"ns1:ExternalEndpoint" -> "ns1:Endpoint" [ label = "rdfs:subClassOf" ];
+	"ns1:BasicData" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+	"ns1:Consumer" -> "ns3:Thing" [ label = "rdfs:subClassOf" ];
+
+}
