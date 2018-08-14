@@ -1,0 +1,444 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://schema.org/domainIncludes
+<http://schema.org/domainIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/inverseOf
+<http://schema.org/inverseOf> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/rangeIncludes
+<http://schema.org/rangeIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#comment
+rdf:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#label
+rdf:label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.big-iot.org/core/AccessInterfaceType
+<http://schema.big-iot.org/core/AccessInterfaceType> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://schema.org/Enumeration> ;
+                                                     rdfs:comment "Access can be either through the BIG-IoT API or via an external endpoint."^^xsd:string ;
+                                                     rdfs:label "AccessInterfaceType"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/BasicData
+<http://schema.big-iot.org/core/BasicData> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://schema.org/Thing> ;
+                                           rdfs:comment "Gives a detail description of the transported payload data between consumer and provider based on this offering"^^xsd:string ;
+                                           rdfs:label "BasicData"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/Categorization
+<http://schema.big-iot.org/core/Categorization> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://schema.org/Thing> ;
+                                                rdf:comment "An Hierarchy of offering categories"^^xsd:string ;
+                                                rdf:label "Categorization"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/Consumer
+<http://schema.big-iot.org/core/Consumer> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://schema.org/Thing> ;
+                                          rdfs:comment "Consumers discover and subscribe to offerings of interest via a marketplace in order to access the resources. A consumer can be either an application or service instance that requires access to IoT resources in order to implement an intended service or function (e.g., a smart parking service provided by the city)"^^xsd:string ;
+                                          rdfs:label "Consumer"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/DataTypeAnnotation
+<http://schema.big-iot.org/core/DataTypeAnnotation> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://schema.org/Thing> ;
+                                                    rdfs:comment "Anything about which information is provided via an offering."^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/Endpoint
+<http://schema.big-iot.org/core/Endpoint> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://schema.org/Thing> ;
+                                          rdfs:comment "The endpoint includes all relevant information which is required to setup right communication to the provider's offering."^^xsd:string ;
+                                          rdfs:label "Endpoint"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/EndpointType
+<http://schema.big-iot.org/core/EndpointType> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://schema.org/Enumeration> ;
+                                              rdfs:comment "Method/protocol to use to access the endpoint."^^xsd:string ;
+                                              rdfs:label "EndpointType"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/ExternalEndpoint
+<http://schema.big-iot.org/core/ExternalEndpoint> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://schema.big-iot.org/core/Endpoint> ;
+                                                  rdfs:comment "See Endpoint class."^^xsd:string ;
+                                                  rdfs:label "External endpoint"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/LibEndpoint
+<http://schema.big-iot.org/core/LibEndpoint> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://schema.big-iot.org/core/Endpoint> ;
+                                             rdfs:comment "See Endpoint class."^^xsd:string ;
+                                             rdfs:label "Lib endpoint"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/License
+<http://schema.big-iot.org/core/License> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://schema.org/Thing> ;
+                                         rdfs:comment "License under which the the offering is provided."^^xsd:string ;
+                                         rdfs:label "License"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/LicenseType
+<http://schema.big-iot.org/core/LicenseType> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://schema.org/Enumeration> ;
+                                             rdfs:comment "License type."^^xsd:string ;
+                                             rdfs:label "LicenseType"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/Offering
+<http://schema.big-iot.org/core/Offering> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://schema.org/Offer> ;
+                                          rdfs:comment "An offering encompasses a set of IoT resources, typically a set of related information (e.g. low-level sensor data like temperature or aggregate information across a region) or functions (e.g. actuation tasks like open a gate or computational functions like computing route), that are offered on a marketplace."^^xsd:string ;
+                                          rdfs:label "Offering"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/OfferingCategory
+<http://schema.big-iot.org/core/OfferingCategory> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://schema.org/Thing> ;
+                                                  rdfs:comment "Category of an offering."^^xsd:string ;
+                                                  rdfs:label "OfferingCategory"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/OfferingQuery
+<http://schema.big-iot.org/core/OfferingQuery> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://schema.org/Demand> ;
+                                               rdfs:comment "Consumers discover offerings they're interesting through the marketplace by providing an (offering) query. The query entails a specification of the type of offerings the consumer is interested in"^^xsd:string ;
+                                               rdfs:label "OfferingQuery"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/OfferingSubscription
+<http://schema.big-iot.org/core/OfferingSubscription> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://schema.org/Thing> ;
+                                                      rdfs:comment "Subscription of a consumer to a specific offering registered by a provider."^^xsd:string ;
+                                                      rdfs:label "OfferingSubscription"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/PricingModel
+<http://schema.big-iot.org/core/PricingModel> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://schema.org/Enumeration> ;
+                                              rdfs:comment "Pricing models include per byte, per access or per month pricing. Offerings can also be free."^^xsd:string ;
+                                              rdfs:label "PricingModel"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/Provider
+<http://schema.big-iot.org/core/Provider> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://schema.org/Thing> ;
+                                          rdfs:comment "Providers register their offerings on a marketplace and provides access to the offered resources via a common API. A provider can be either a platform or a service instance that offers available resources, i.e., some information or access to functions that it wants to share or trade on the marketplace (e.g. an IoT platform of a parking lot provider)"^^xsd:string ;
+                                          rdfs:label "Provider"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/ProxyEndpoint
+<http://schema.big-iot.org/core/ProxyEndpoint> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://schema.big-iot.org/core/Endpoint> ;
+                                               rdfs:comment "See Endpoint class."^^xsd:string ;
+                                               rdfs:label "Proxy endpoint"^^xsd:string .
+
+
+###  http://schema.org/Demand
+<http://schema.org/Demand> rdf:type owl:Class .
+
+
+###  http://schema.org/Enumeration
+<http://schema.org/Enumeration> rdf:type owl:Class .
+
+
+###  http://schema.org/Offer
+<http://schema.org/Offer> rdf:type owl:Class .
+
+
+###  http://schema.org/Thing
+<http://schema.org/Thing> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://schema.big-iot.org/core/ac_bigiot_lib
+<http://schema.big-iot.org/core/ac_bigiot_lib> rdf:type owl:NamedIndividual ,
+                                                        <http://schema.big-iot.org/core/AccessInterfaceType> ;
+                                               rdfs:comment "BigIoT lib access interface type"^^xsd:string ;
+                                               rdfs:label "BIGIOT_LIB"^^xsd:string ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "ac bigiot lib"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/ac_external_lib
+<http://schema.big-iot.org/core/ac_external_lib> rdf:type owl:NamedIndividual ,
+                                                          <http://schema.big-iot.org/core/AccessInterfaceType> ;
+                                                 rdfs:comment "External lib access interface type"^^xsd:string ;
+                                                 rdfs:label "EXTERNAL"^^xsd:string ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "ac external lib"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/creative_commons
+<http://schema.big-iot.org/core/creative_commons> rdf:type owl:NamedIndividual ,
+                                                           <http://schema.big-iot.org/core/LicenseType> ;
+                                                  rdfs:comment "Creative Commons type"^^xsd:string ;
+                                                  rdfs:label "CREATIVE_COMMONS"^^xsd:string ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Creative Commons"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/endpoint_socket
+<http://schema.big-iot.org/core/endpoint_socket> rdf:type owl:NamedIndividual ,
+                                                          <http://schema.big-iot.org/core/EndpointType> ;
+                                                 rdfs:comment "WebSocket endpoint type"^^xsd:string ;
+                                                 rdfs:label "WEBSOCKET"^^xsd:string ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "endpoint socket"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/free_price
+<http://schema.big-iot.org/core/free_price> rdf:type owl:NamedIndividual ,
+                                                     <http://schema.big-iot.org/core/PricingModel> ;
+                                            rdfs:comment "FREE pricing model"^^xsd:string ;
+                                            rdfs:label "FREE"^^xsd:string ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "FREE"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/http_get
+<http://schema.big-iot.org/core/http_get> rdf:type owl:NamedIndividual ,
+                                                   <http://schema.big-iot.org/core/EndpointType> ;
+                                          rdfs:comment "HTTP GET endpoint type"^^xsd:string ;
+                                          rdfs:label "HTTP_GET"^^xsd:string ;
+                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "http get"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/http_post
+<http://schema.big-iot.org/core/http_post> rdf:type owl:NamedIndividual ,
+                                                    <http://schema.big-iot.org/core/EndpointType> ;
+                                           rdfs:comment "HTTP POST endpoint type"^^xsd:string ;
+                                           rdfs:label "HTTP_POST"^^xsd:string ;
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "http post"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/non_commercial_data_lc
+<http://schema.big-iot.org/core/non_commercial_data_lc> rdf:type owl:NamedIndividual ,
+                                                                 <http://schema.big-iot.org/core/LicenseType> ;
+                                                        rdfs:comment "Non commercial data license"^^xsd:string ;
+                                                        rdfs:label "NON_COMMERCIAL_DATA_LICENSE"^^xsd:string ;
+                                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Non Commercial Data License"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/open_data_license
+<http://schema.big-iot.org/core/open_data_license> rdf:type owl:NamedIndividual ,
+                                                            <http://schema.big-iot.org/core/LicenseType> ;
+                                                   rdfs:comment "Open Data License type"^^xsd:string ;
+                                                   rdfs:label "OPEN_DATA_LICENSE"^^xsd:string ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "open data license"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/per_access_price
+<http://schema.big-iot.org/core/per_access_price> rdf:type owl:NamedIndividual ,
+                                                           <http://schema.big-iot.org/core/PricingModel> ;
+                                                  rdfs:comment "Per access pricing model"^^xsd:string ;
+                                                  rdfs:label "PER_ACCESS"^^xsd:string ;
+                                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Per Month"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/per_byte_price
+<http://schema.big-iot.org/core/per_byte_price> rdf:type owl:NamedIndividual ,
+                                                         <http://schema.big-iot.org/core/PricingModel> ;
+                                                rdfs:comment "Per byte pricing model"^^xsd:string ;
+                                                rdfs:label "PER_BYTE"^^xsd:string ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Per Byte"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/per_month_price
+<http://schema.big-iot.org/core/per_month_price> rdf:type owl:NamedIndividual ,
+                                                          <http://schema.big-iot.org/core/PricingModel> ;
+                                                 rdfs:comment "Per month pricing model"^^xsd:string ;
+                                                 rdfs:label "PER_MONTH"^^xsd:string ;
+                                                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Per Month"^^xsd:string .
+
+
+###  http://schema.big-iot.org/core/project_internal_use_only
+<http://schema.big-iot.org/core/project_internal_use_only> rdf:type owl:NamedIndividual ,
+                                                                    <http://schema.big-iot.org/core/LicenseType> ;
+                                                           rdfs:comment "Project internal use License type"^^xsd:string ;
+                                                           rdfs:label "PROJECT INTERNAL USE ONLY"^^xsd:string ;
+                                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "project internal use only"^^xsd:string .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://schema.big-iot.org/core/accessInterfaceType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Endpoint> ;
+                                                     <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/AccessInterfaceType> ;
+                                                     rdfs:comment "Access interface type."^^xsd:string ;
+                                                     rdfs:label "accessInterfaceType"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/consumerId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Consumer> ;
+                                            <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+                                            rdfs:comment "Identifier on a BIG-IoT marketplace of a consumer."^^xsd:string ;
+                                            rdfs:label "consumerId"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/endpoint> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                          <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Endpoint> .
+
+
+<http://schema.big-iot.org/core/endpointType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Endpoint> ;
+                                              <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/EndpointType> ;
+                                              rdfs:comment "endpoint type."^^xsd:string ;
+                                              rdfs:label "endpointType"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/expectedAnnotation> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingCategory> ;
+                                                    <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/DataTypeAnnotation> ;
+                                                    rdfs:comment "Annotation expected for a certain offering category."^^xsd:string ;
+                                                    rdfs:label "expectedAnnotation"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/hasInput> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                          <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/BasicData> ;
+                                          rdfs:comment "Data required by the provider to fulfill an offering."^^xsd:string ;
+                                          rdfs:label "hasInput"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/hasOutput> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                           <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/BasicData> ;
+                                           rdfs:comment "Data provided by the provider via an offering."^^xsd:string ;
+                                           rdfs:label "hasOutput"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/isActivated> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                             <http://schema.org/rangeIncludes> <http://schema.org/Boolean> ;
+                                             rdfs:comment "An offering has to be activated manually on the marketplace where it is registered."^^xsd:string ;
+                                             rdfs:label "isActivated"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/isProvidedBy> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                              <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Provider> ;
+                                              rdfs:comment "Relation between an offering and the provider who registered it."^^xsd:string ;
+                                              rdfs:label "isProvidedBy"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/isRegisteredBy> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingQuery> ;
+                                                <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Consumer> ;
+                                                rdfs:comment "Relation between an offering and the consumer who registered it."^^xsd:string ;
+                                                rdfs:label "isRegisteredBy"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/licenseType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/License> ;
+                                             <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/LicenseType> .
+
+
+<http://schema.big-iot.org/core/offering> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Provider> ;
+                                          <http://schema.org/inverseOf> <http://schema.big-iot.org/core/isProvidedBy> ;
+                                          <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                          rdfs:comment "Relation between an offering and the consumer who registered it."^^xsd:string ;
+                                          rdfs:label "offering"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/offeringExpirationTime> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                                        <http://schema.org/rangeIncludes> <http://schema.org/DateTime> ;
+                                                        rdfs:comment "Expiration time."^^xsd:string ;
+                                                        rdfs:label "offeringExpirationTime"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/offeringId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                            <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+                                            rdfs:comment "Offering identifier."^^xsd:string ;
+                                            rdfs:label "offeringId"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/offeringQuery> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Consumer> ;
+                                               <http://schema.org/inverseOf> <http://schema.big-iot.org/core/isRegisteredBy> ;
+                                               <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/OfferingQuery> ;
+                                               rdfs:comment "Concepts likely to be involved in offerings of a certain category."^^xsd:string ;
+                                               rdfs:label "offeringQuery"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/organizationId> <http://schema.org/domainIncludes> <http://schema.org/Organization> ;
+                                                <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+                                                rdfs:comment "Organization identifier."^^xsd:string ;
+                                                rdfs:label "organizationId"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/pricingModel> <http://schema.org/domainIncludes> <http://schema.org/PriceSpecification> ;
+                                              <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/PricingModel> ;
+                                              rdfs:comment "Pricing model applicable to an offering."^^xsd:string ;
+                                              rdfs:label "pricingModel"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/providerId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Provider> ;
+                                            <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+                                            rdfs:comment "Provider identifier."^^xsd:string ;
+                                            rdfs:label "providerId"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/queryId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Query> ;
+                                         <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+                                         rdfs:comment "Offering query identifier."^^xsd:string ;
+                                         rdfs:label "queryId"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/rdfAnnotation> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/BasicData> ;
+                                               <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/DataTypeAnnotation> ;
+                                               rdfs:comment "Annotation of a data type with an RDF term."^^xsd:string ;
+                                               rdfs:label "rdfAnnotation"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/refersTo> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingCategory> ;
+                                          <http://schema.org/rangeIncludes> rdfs:Class ;
+                                          rdfs:comment "Concepts likely to be involved in offerings of a certain category."^^xsd:string ;
+                                          rdfs:label "refersTo"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/subscribedQuery> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingSubscription> ;
+                                                 <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/OfferingQuery> ;
+                                                 rdfs:comment "Relation between an offering subscription and the offering query that matched the offering."^^xsd:string ;
+                                                 rdfs:label "subscribedQuery"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/subscribesTo> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingSubscription> ;
+                                              <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Offering> ;
+                                              rdfs:comment "Relation between a subscription and the offering it subscribes to."^^xsd:string ;
+                                              rdfs:label "subscribesTo"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/subscriptionId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingSubscription> ;
+                                                <http://schema.org/rangeIncludes> <http://schema.org/Text> ;
+                                                rdfs:comment "Subscription identifier."^^xsd:string ;
+                                                rdfs:label "subscriptionId"^^xsd:string .
+
+
+<http://schema.big-iot.org/core/valueType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/BasicData> ;
+                                           <http://schema.org/rangeIncludes> <http://schema.org/DataType> ;
+                                           rdfs:comment "Data type of a given property value."^^xsd:string ;
+                                           rdfs:label "valueType"^^xsd:string .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

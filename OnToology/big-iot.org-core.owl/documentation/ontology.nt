@@ -1,0 +1,389 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://schema.org/domainIncludes
+<http://schema.org/domainIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/inverseOf
+<http://schema.org/inverseOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://schema.org/rangeIncludes
+<http://schema.org/rangeIncludes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#comment
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#label
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://schema.big-iot.org/core/AccessInterfaceType
+<http://schema.big-iot.org/core/AccessInterfaceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/AccessInterfaceType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Enumeration> .
+<http://schema.big-iot.org/core/AccessInterfaceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Access can be either through the BIG-IoT API or via an external endpoint." .
+<http://schema.big-iot.org/core/AccessInterfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "AccessInterfaceType" .
+# 
+# http://schema.big-iot.org/core/BasicData
+<http://schema.big-iot.org/core/BasicData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/BasicData> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/BasicData> <http://www.w3.org/2000/01/rdf-schema#comment> "Gives a detail description of the transported payload data between consumer and provider based on this offering" .
+<http://schema.big-iot.org/core/BasicData> <http://www.w3.org/2000/01/rdf-schema#label> "BasicData" .
+# 
+# http://schema.big-iot.org/core/Categorization
+<http://schema.big-iot.org/core/Categorization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/Categorization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/Categorization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#comment> "An Hierarchy of offering categories" .
+<http://schema.big-iot.org/core/Categorization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#label> "Categorization" .
+# 
+# http://schema.big-iot.org/core/Consumer
+<http://schema.big-iot.org/core/Consumer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/Consumer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/Consumer> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumers discover and subscribe to offerings of interest via a marketplace in order to access the resources. A consumer can be either an application or service instance that requires access to IoT resources in order to implement an intended service or function (e.g., a smart parking service provided by the city)" .
+<http://schema.big-iot.org/core/Consumer> <http://www.w3.org/2000/01/rdf-schema#label> "Consumer" .
+# 
+# http://schema.big-iot.org/core/DataTypeAnnotation
+<http://schema.big-iot.org/core/DataTypeAnnotation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/DataTypeAnnotation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/DataTypeAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Anything about which information is provided via an offering." .
+# 
+# http://schema.big-iot.org/core/Endpoint
+<http://schema.big-iot.org/core/Endpoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/Endpoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/Endpoint> <http://www.w3.org/2000/01/rdf-schema#comment> "The endpoint includes all relevant information which is required to setup right communication to the provider's offering." .
+<http://schema.big-iot.org/core/Endpoint> <http://www.w3.org/2000/01/rdf-schema#label> "Endpoint" .
+# 
+# http://schema.big-iot.org/core/EndpointType
+<http://schema.big-iot.org/core/EndpointType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/EndpointType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Enumeration> .
+<http://schema.big-iot.org/core/EndpointType> <http://www.w3.org/2000/01/rdf-schema#comment> "Method/protocol to use to access the endpoint." .
+<http://schema.big-iot.org/core/EndpointType> <http://www.w3.org/2000/01/rdf-schema#label> "EndpointType" .
+# 
+# http://schema.big-iot.org/core/ExternalEndpoint
+<http://schema.big-iot.org/core/ExternalEndpoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/ExternalEndpoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.big-iot.org/core/Endpoint> .
+<http://schema.big-iot.org/core/ExternalEndpoint> <http://www.w3.org/2000/01/rdf-schema#comment> "See Endpoint class." .
+<http://schema.big-iot.org/core/ExternalEndpoint> <http://www.w3.org/2000/01/rdf-schema#label> "External endpoint" .
+# 
+# http://schema.big-iot.org/core/LibEndpoint
+<http://schema.big-iot.org/core/LibEndpoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/LibEndpoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.big-iot.org/core/Endpoint> .
+<http://schema.big-iot.org/core/LibEndpoint> <http://www.w3.org/2000/01/rdf-schema#comment> "See Endpoint class." .
+<http://schema.big-iot.org/core/LibEndpoint> <http://www.w3.org/2000/01/rdf-schema#label> "Lib endpoint" .
+# 
+# http://schema.big-iot.org/core/License
+<http://schema.big-iot.org/core/License> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/License> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/License> <http://www.w3.org/2000/01/rdf-schema#comment> "License under which the the offering is provided." .
+<http://schema.big-iot.org/core/License> <http://www.w3.org/2000/01/rdf-schema#label> "License" .
+# 
+# http://schema.big-iot.org/core/LicenseType
+<http://schema.big-iot.org/core/LicenseType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/LicenseType> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Enumeration> .
+<http://schema.big-iot.org/core/LicenseType> <http://www.w3.org/2000/01/rdf-schema#comment> "License type." .
+<http://schema.big-iot.org/core/LicenseType> <http://www.w3.org/2000/01/rdf-schema#label> "LicenseType" .
+# 
+# http://schema.big-iot.org/core/Offering
+<http://schema.big-iot.org/core/Offering> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/Offering> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Offer> .
+<http://schema.big-iot.org/core/Offering> <http://www.w3.org/2000/01/rdf-schema#comment> "An offering encompasses a set of IoT resources, typically a set of related information (e.g. low-level sensor data like temperature or aggregate information across a region) or functions (e.g. actuation tasks like open a gate or computational functions like computing route), that are offered on a marketplace." .
+<http://schema.big-iot.org/core/Offering> <http://www.w3.org/2000/01/rdf-schema#label> "Offering" .
+# 
+# http://schema.big-iot.org/core/OfferingCategory
+<http://schema.big-iot.org/core/OfferingCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/OfferingCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/OfferingCategory> <http://www.w3.org/2000/01/rdf-schema#comment> "Category of an offering." .
+<http://schema.big-iot.org/core/OfferingCategory> <http://www.w3.org/2000/01/rdf-schema#label> "OfferingCategory" .
+# 
+# http://schema.big-iot.org/core/OfferingQuery
+<http://schema.big-iot.org/core/OfferingQuery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/OfferingQuery> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Demand> .
+<http://schema.big-iot.org/core/OfferingQuery> <http://www.w3.org/2000/01/rdf-schema#comment> "Consumers discover offerings they're interesting through the marketplace by providing an (offering) query. The query entails a specification of the type of offerings the consumer is interested in" .
+<http://schema.big-iot.org/core/OfferingQuery> <http://www.w3.org/2000/01/rdf-schema#label> "OfferingQuery" .
+# 
+# http://schema.big-iot.org/core/OfferingSubscription
+<http://schema.big-iot.org/core/OfferingSubscription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/OfferingSubscription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/OfferingSubscription> <http://www.w3.org/2000/01/rdf-schema#comment> "Subscription of a consumer to a specific offering registered by a provider." .
+<http://schema.big-iot.org/core/OfferingSubscription> <http://www.w3.org/2000/01/rdf-schema#label> "OfferingSubscription" .
+# 
+# http://schema.big-iot.org/core/PricingModel
+<http://schema.big-iot.org/core/PricingModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/PricingModel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Enumeration> .
+<http://schema.big-iot.org/core/PricingModel> <http://www.w3.org/2000/01/rdf-schema#comment> "Pricing models include per byte, per access or per month pricing. Offerings can also be free." .
+<http://schema.big-iot.org/core/PricingModel> <http://www.w3.org/2000/01/rdf-schema#label> "PricingModel" .
+# 
+# http://schema.big-iot.org/core/Provider
+<http://schema.big-iot.org/core/Provider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/Provider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Thing> .
+<http://schema.big-iot.org/core/Provider> <http://www.w3.org/2000/01/rdf-schema#comment> "Providers register their offerings on a marketplace and provides access to the offered resources via a common API. A provider can be either a platform or a service instance that offers available resources, i.e., some information or access to functions that it wants to share or trade on the marketplace (e.g. an IoT platform of a parking lot provider)" .
+<http://schema.big-iot.org/core/Provider> <http://www.w3.org/2000/01/rdf-schema#label> "Provider" .
+# 
+# http://schema.big-iot.org/core/ProxyEndpoint
+<http://schema.big-iot.org/core/ProxyEndpoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.big-iot.org/core/ProxyEndpoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.big-iot.org/core/Endpoint> .
+<http://schema.big-iot.org/core/ProxyEndpoint> <http://www.w3.org/2000/01/rdf-schema#comment> "See Endpoint class." .
+<http://schema.big-iot.org/core/ProxyEndpoint> <http://www.w3.org/2000/01/rdf-schema#label> "Proxy endpoint" .
+# 
+# http://schema.org/Demand
+<http://schema.org/Demand> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://schema.org/Enumeration
+<http://schema.org/Enumeration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://schema.org/Offer
+<http://schema.org/Offer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://schema.org/Thing
+<http://schema.org/Thing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://schema.big-iot.org/core/ac_bigiot_lib
+<http://schema.big-iot.org/core/ac_bigiot_lib> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/ac_bigiot_lib> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/AccessInterfaceType> .
+<http://schema.big-iot.org/core/ac_bigiot_lib> <http://www.w3.org/2000/01/rdf-schema#comment> "BigIoT lib access interface type" .
+<http://schema.big-iot.org/core/ac_bigiot_lib> <http://www.w3.org/2000/01/rdf-schema#label> "BIGIOT_LIB" .
+<http://schema.big-iot.org/core/ac_bigiot_lib> <http://www.w3.org/2004/02/skos/core#prefLabel> "ac bigiot lib" .
+# 
+# http://schema.big-iot.org/core/ac_external_lib
+<http://schema.big-iot.org/core/ac_external_lib> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/ac_external_lib> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/AccessInterfaceType> .
+<http://schema.big-iot.org/core/ac_external_lib> <http://www.w3.org/2000/01/rdf-schema#comment> "External lib access interface type" .
+<http://schema.big-iot.org/core/ac_external_lib> <http://www.w3.org/2000/01/rdf-schema#label> "EXTERNAL" .
+<http://schema.big-iot.org/core/ac_external_lib> <http://www.w3.org/2004/02/skos/core#prefLabel> "ac external lib" .
+# 
+# http://schema.big-iot.org/core/creative_commons
+<http://schema.big-iot.org/core/creative_commons> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/creative_commons> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/LicenseType> .
+<http://schema.big-iot.org/core/creative_commons> <http://www.w3.org/2000/01/rdf-schema#comment> "Creative Commons type" .
+<http://schema.big-iot.org/core/creative_commons> <http://www.w3.org/2000/01/rdf-schema#label> "CREATIVE_COMMONS" .
+<http://schema.big-iot.org/core/creative_commons> <http://www.w3.org/2004/02/skos/core#prefLabel> "Creative Commons" .
+# 
+# http://schema.big-iot.org/core/endpoint_socket
+<http://schema.big-iot.org/core/endpoint_socket> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/endpoint_socket> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/EndpointType> .
+<http://schema.big-iot.org/core/endpoint_socket> <http://www.w3.org/2000/01/rdf-schema#comment> "WebSocket endpoint type" .
+<http://schema.big-iot.org/core/endpoint_socket> <http://www.w3.org/2000/01/rdf-schema#label> "WEBSOCKET" .
+<http://schema.big-iot.org/core/endpoint_socket> <http://www.w3.org/2004/02/skos/core#prefLabel> "endpoint socket" .
+# 
+# http://schema.big-iot.org/core/free_price
+<http://schema.big-iot.org/core/free_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/free_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/PricingModel> .
+<http://schema.big-iot.org/core/free_price> <http://www.w3.org/2000/01/rdf-schema#comment> "FREE pricing model" .
+<http://schema.big-iot.org/core/free_price> <http://www.w3.org/2000/01/rdf-schema#label> "FREE" .
+<http://schema.big-iot.org/core/free_price> <http://www.w3.org/2004/02/skos/core#prefLabel> "FREE" .
+# 
+# http://schema.big-iot.org/core/http_get
+<http://schema.big-iot.org/core/http_get> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/http_get> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/EndpointType> .
+<http://schema.big-iot.org/core/http_get> <http://www.w3.org/2000/01/rdf-schema#comment> "HTTP GET endpoint type" .
+<http://schema.big-iot.org/core/http_get> <http://www.w3.org/2000/01/rdf-schema#label> "HTTP_GET" .
+<http://schema.big-iot.org/core/http_get> <http://www.w3.org/2004/02/skos/core#prefLabel> "http get" .
+# 
+# http://schema.big-iot.org/core/http_post
+<http://schema.big-iot.org/core/http_post> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/http_post> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/EndpointType> .
+<http://schema.big-iot.org/core/http_post> <http://www.w3.org/2000/01/rdf-schema#comment> "HTTP POST endpoint type" .
+<http://schema.big-iot.org/core/http_post> <http://www.w3.org/2000/01/rdf-schema#label> "HTTP_POST" .
+<http://schema.big-iot.org/core/http_post> <http://www.w3.org/2004/02/skos/core#prefLabel> "http post" .
+# 
+# http://schema.big-iot.org/core/non_commercial_data_lc
+<http://schema.big-iot.org/core/non_commercial_data_lc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/non_commercial_data_lc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/LicenseType> .
+<http://schema.big-iot.org/core/non_commercial_data_lc> <http://www.w3.org/2000/01/rdf-schema#comment> "Non commercial data license" .
+<http://schema.big-iot.org/core/non_commercial_data_lc> <http://www.w3.org/2000/01/rdf-schema#label> "NON_COMMERCIAL_DATA_LICENSE" .
+<http://schema.big-iot.org/core/non_commercial_data_lc> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non Commercial Data License" .
+# 
+# http://schema.big-iot.org/core/open_data_license
+<http://schema.big-iot.org/core/open_data_license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/open_data_license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/LicenseType> .
+<http://schema.big-iot.org/core/open_data_license> <http://www.w3.org/2000/01/rdf-schema#comment> "Open Data License type" .
+<http://schema.big-iot.org/core/open_data_license> <http://www.w3.org/2000/01/rdf-schema#label> "OPEN_DATA_LICENSE" .
+<http://schema.big-iot.org/core/open_data_license> <http://www.w3.org/2004/02/skos/core#prefLabel> "open data license" .
+# 
+# http://schema.big-iot.org/core/per_access_price
+<http://schema.big-iot.org/core/per_access_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/per_access_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/PricingModel> .
+<http://schema.big-iot.org/core/per_access_price> <http://www.w3.org/2000/01/rdf-schema#comment> "Per access pricing model" .
+<http://schema.big-iot.org/core/per_access_price> <http://www.w3.org/2000/01/rdf-schema#label> "PER_ACCESS" .
+<http://schema.big-iot.org/core/per_access_price> <http://www.w3.org/2004/02/skos/core#prefLabel> "Per Month" .
+# 
+# http://schema.big-iot.org/core/per_byte_price
+<http://schema.big-iot.org/core/per_byte_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/per_byte_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/PricingModel> .
+<http://schema.big-iot.org/core/per_byte_price> <http://www.w3.org/2000/01/rdf-schema#comment> "Per byte pricing model" .
+<http://schema.big-iot.org/core/per_byte_price> <http://www.w3.org/2000/01/rdf-schema#label> "PER_BYTE" .
+<http://schema.big-iot.org/core/per_byte_price> <http://www.w3.org/2004/02/skos/core#prefLabel> "Per Byte" .
+# 
+# http://schema.big-iot.org/core/per_month_price
+<http://schema.big-iot.org/core/per_month_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/per_month_price> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/PricingModel> .
+<http://schema.big-iot.org/core/per_month_price> <http://www.w3.org/2000/01/rdf-schema#comment> "Per month pricing model" .
+<http://schema.big-iot.org/core/per_month_price> <http://www.w3.org/2000/01/rdf-schema#label> "PER_MONTH" .
+<http://schema.big-iot.org/core/per_month_price> <http://www.w3.org/2004/02/skos/core#prefLabel> "Per Month" .
+# 
+# http://schema.big-iot.org/core/project_internal_use_only
+<http://schema.big-iot.org/core/project_internal_use_only> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.big-iot.org/core/project_internal_use_only> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.big-iot.org/core/LicenseType> .
+<http://schema.big-iot.org/core/project_internal_use_only> <http://www.w3.org/2000/01/rdf-schema#comment> "Project internal use License type" .
+<http://schema.big-iot.org/core/project_internal_use_only> <http://www.w3.org/2000/01/rdf-schema#label> "PROJECT INTERNAL USE ONLY" .
+<http://schema.big-iot.org/core/project_internal_use_only> <http://www.w3.org/2004/02/skos/core#prefLabel> "project internal use only" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://schema.big-iot.org/core/accessInterfaceType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Endpoint> .
+<http://schema.big-iot.org/core/accessInterfaceType> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/AccessInterfaceType> .
+<http://schema.big-iot.org/core/accessInterfaceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Access interface type." .
+<http://schema.big-iot.org/core/accessInterfaceType> <http://www.w3.org/2000/01/rdf-schema#label> "accessInterfaceType" .
+# 
+<http://schema.big-iot.org/core/consumerId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Consumer> .
+<http://schema.big-iot.org/core/consumerId> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.big-iot.org/core/consumerId> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier on a BIG-IoT marketplace of a consumer." .
+<http://schema.big-iot.org/core/consumerId> <http://www.w3.org/2000/01/rdf-schema#label> "consumerId" .
+# 
+<http://schema.big-iot.org/core/endpoint> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/endpoint> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Endpoint> .
+# 
+<http://schema.big-iot.org/core/endpointType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Endpoint> .
+<http://schema.big-iot.org/core/endpointType> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/EndpointType> .
+<http://schema.big-iot.org/core/endpointType> <http://www.w3.org/2000/01/rdf-schema#comment> "endpoint type." .
+<http://schema.big-iot.org/core/endpointType> <http://www.w3.org/2000/01/rdf-schema#label> "endpointType" .
+# 
+<http://schema.big-iot.org/core/expectedAnnotation> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingCategory> .
+<http://schema.big-iot.org/core/expectedAnnotation> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/DataTypeAnnotation> .
+<http://schema.big-iot.org/core/expectedAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Annotation expected for a certain offering category." .
+<http://schema.big-iot.org/core/expectedAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "expectedAnnotation" .
+# 
+<http://schema.big-iot.org/core/hasInput> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/hasInput> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/BasicData> .
+<http://schema.big-iot.org/core/hasInput> <http://www.w3.org/2000/01/rdf-schema#comment> "Data required by the provider to fulfill an offering." .
+<http://schema.big-iot.org/core/hasInput> <http://www.w3.org/2000/01/rdf-schema#label> "hasInput" .
+# 
+<http://schema.big-iot.org/core/hasOutput> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/hasOutput> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/BasicData> .
+<http://schema.big-iot.org/core/hasOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "Data provided by the provider via an offering." .
+<http://schema.big-iot.org/core/hasOutput> <http://www.w3.org/2000/01/rdf-schema#label> "hasOutput" .
+# 
+<http://schema.big-iot.org/core/isActivated> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/isActivated> <http://schema.org/rangeIncludes> <http://schema.org/Boolean> .
+<http://schema.big-iot.org/core/isActivated> <http://www.w3.org/2000/01/rdf-schema#comment> "An offering has to be activated manually on the marketplace where it is registered." .
+<http://schema.big-iot.org/core/isActivated> <http://www.w3.org/2000/01/rdf-schema#label> "isActivated" .
+# 
+<http://schema.big-iot.org/core/isProvidedBy> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/isProvidedBy> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Provider> .
+<http://schema.big-iot.org/core/isProvidedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an offering and the provider who registered it." .
+<http://schema.big-iot.org/core/isProvidedBy> <http://www.w3.org/2000/01/rdf-schema#label> "isProvidedBy" .
+# 
+<http://schema.big-iot.org/core/isRegisteredBy> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingQuery> .
+<http://schema.big-iot.org/core/isRegisteredBy> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Consumer> .
+<http://schema.big-iot.org/core/isRegisteredBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an offering and the consumer who registered it." .
+<http://schema.big-iot.org/core/isRegisteredBy> <http://www.w3.org/2000/01/rdf-schema#label> "isRegisteredBy" .
+# 
+<http://schema.big-iot.org/core/licenseType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/License> .
+<http://schema.big-iot.org/core/licenseType> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/LicenseType> .
+# 
+<http://schema.big-iot.org/core/offering> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Provider> .
+<http://schema.big-iot.org/core/offering> <http://schema.org/inverseOf> <http://schema.big-iot.org/core/isProvidedBy> .
+<http://schema.big-iot.org/core/offering> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/offering> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an offering and the consumer who registered it." .
+<http://schema.big-iot.org/core/offering> <http://www.w3.org/2000/01/rdf-schema#label> "offering" .
+# 
+<http://schema.big-iot.org/core/offeringExpirationTime> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/offeringExpirationTime> <http://schema.org/rangeIncludes> <http://schema.org/DateTime> .
+<http://schema.big-iot.org/core/offeringExpirationTime> <http://www.w3.org/2000/01/rdf-schema#comment> "Expiration time." .
+<http://schema.big-iot.org/core/offeringExpirationTime> <http://www.w3.org/2000/01/rdf-schema#label> "offeringExpirationTime" .
+# 
+<http://schema.big-iot.org/core/offeringId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/offeringId> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.big-iot.org/core/offeringId> <http://www.w3.org/2000/01/rdf-schema#comment> "Offering identifier." .
+<http://schema.big-iot.org/core/offeringId> <http://www.w3.org/2000/01/rdf-schema#label> "offeringId" .
+# 
+<http://schema.big-iot.org/core/offeringQuery> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Consumer> .
+<http://schema.big-iot.org/core/offeringQuery> <http://schema.org/inverseOf> <http://schema.big-iot.org/core/isRegisteredBy> .
+<http://schema.big-iot.org/core/offeringQuery> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/OfferingQuery> .
+<http://schema.big-iot.org/core/offeringQuery> <http://www.w3.org/2000/01/rdf-schema#comment> "Concepts likely to be involved in offerings of a certain category." .
+<http://schema.big-iot.org/core/offeringQuery> <http://www.w3.org/2000/01/rdf-schema#label> "offeringQuery" .
+# 
+<http://schema.big-iot.org/core/organizationId> <http://schema.org/domainIncludes> <http://schema.org/Organization> .
+<http://schema.big-iot.org/core/organizationId> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.big-iot.org/core/organizationId> <http://www.w3.org/2000/01/rdf-schema#comment> "Organization identifier." .
+<http://schema.big-iot.org/core/organizationId> <http://www.w3.org/2000/01/rdf-schema#label> "organizationId" .
+# 
+<http://schema.big-iot.org/core/pricingModel> <http://schema.org/domainIncludes> <http://schema.org/PriceSpecification> .
+<http://schema.big-iot.org/core/pricingModel> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/PricingModel> .
+<http://schema.big-iot.org/core/pricingModel> <http://www.w3.org/2000/01/rdf-schema#comment> "Pricing model applicable to an offering." .
+<http://schema.big-iot.org/core/pricingModel> <http://www.w3.org/2000/01/rdf-schema#label> "pricingModel" .
+# 
+<http://schema.big-iot.org/core/providerId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Provider> .
+<http://schema.big-iot.org/core/providerId> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.big-iot.org/core/providerId> <http://www.w3.org/2000/01/rdf-schema#comment> "Provider identifier." .
+<http://schema.big-iot.org/core/providerId> <http://www.w3.org/2000/01/rdf-schema#label> "providerId" .
+# 
+<http://schema.big-iot.org/core/queryId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/Query> .
+<http://schema.big-iot.org/core/queryId> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.big-iot.org/core/queryId> <http://www.w3.org/2000/01/rdf-schema#comment> "Offering query identifier." .
+<http://schema.big-iot.org/core/queryId> <http://www.w3.org/2000/01/rdf-schema#label> "queryId" .
+# 
+<http://schema.big-iot.org/core/rdfAnnotation> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/BasicData> .
+<http://schema.big-iot.org/core/rdfAnnotation> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/DataTypeAnnotation> .
+<http://schema.big-iot.org/core/rdfAnnotation> <http://www.w3.org/2000/01/rdf-schema#comment> "Annotation of a data type with an RDF term." .
+<http://schema.big-iot.org/core/rdfAnnotation> <http://www.w3.org/2000/01/rdf-schema#label> "rdfAnnotation" .
+# 
+<http://schema.big-iot.org/core/refersTo> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingCategory> .
+<http://schema.big-iot.org/core/refersTo> <http://schema.org/rangeIncludes> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<http://schema.big-iot.org/core/refersTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Concepts likely to be involved in offerings of a certain category." .
+<http://schema.big-iot.org/core/refersTo> <http://www.w3.org/2000/01/rdf-schema#label> "refersTo" .
+# 
+<http://schema.big-iot.org/core/subscribedQuery> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingSubscription> .
+<http://schema.big-iot.org/core/subscribedQuery> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/OfferingQuery> .
+<http://schema.big-iot.org/core/subscribedQuery> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between an offering subscription and the offering query that matched the offering." .
+<http://schema.big-iot.org/core/subscribedQuery> <http://www.w3.org/2000/01/rdf-schema#label> "subscribedQuery" .
+# 
+<http://schema.big-iot.org/core/subscribesTo> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingSubscription> .
+<http://schema.big-iot.org/core/subscribesTo> <http://schema.org/rangeIncludes> <http://schema.big-iot.org/core/Offering> .
+<http://schema.big-iot.org/core/subscribesTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a subscription and the offering it subscribes to." .
+<http://schema.big-iot.org/core/subscribesTo> <http://www.w3.org/2000/01/rdf-schema#label> "subscribesTo" .
+# 
+<http://schema.big-iot.org/core/subscriptionId> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/OfferingSubscription> .
+<http://schema.big-iot.org/core/subscriptionId> <http://schema.org/rangeIncludes> <http://schema.org/Text> .
+<http://schema.big-iot.org/core/subscriptionId> <http://www.w3.org/2000/01/rdf-schema#comment> "Subscription identifier." .
+<http://schema.big-iot.org/core/subscriptionId> <http://www.w3.org/2000/01/rdf-schema#label> "subscriptionId" .
+# 
+<http://schema.big-iot.org/core/valueType> <http://schema.org/domainIncludes> <http://schema.big-iot.org/core/BasicData> .
+<http://schema.big-iot.org/core/valueType> <http://schema.org/rangeIncludes> <http://schema.org/DataType> .
+<http://schema.big-iot.org/core/valueType> <http://www.w3.org/2000/01/rdf-schema#comment> "Data type of a given property value." .
+<http://schema.big-iot.org/core/valueType> <http://www.w3.org/2000/01/rdf-schema#label> "valueType" .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
