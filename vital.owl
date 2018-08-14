@@ -1,1153 +1,1294 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE Ontology [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://vital-iot.eu/ontology/ns/"
      xml:base="http://vital-iot.eu/ontology/ns/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:qudt="http://qudt.org/schema/qudt#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:msm="http://iserve.kmi.open.ac.uk/ns/msm#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://vital-iot.eu/ontology/ns/">
-    <Prefix name="" IRI="http://vital-iot.eu/ontology/ns/"/>
-    <Prefix name="dcn" IRI="http://www.w3.org/2007/uwa/context/deliveryContext.owl#"/>
-    <Prefix name="dul" IRI="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"/>
-    <Prefix name="geo" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
-    <Prefix name="msm" IRI="http://iserve.kmi.open.ac.uk/ns/msm#"/>
-    <Prefix name="net" IRI="http://www.w3.org/2007/uwa/context/network.owl#"/>
-    <Prefix name="otn" IRI="http://www.pms.ifi.lmu.de/rewerse-wga1/otn/OTN.owl"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="ssn" IRI="http://purl.oclc.org/NET/ssnx/ssn#"/>
-    <Prefix name="wsl" IRI="http://www.wsmo.org/ns/wsmo-lite#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="foaf" IRI="http://xmlns.com/foaf/"/>
-    <Prefix name="hard" IRI="http://www.w3.org/2007/uwa/context/hardware.owl#"/>
-    <Prefix name="http" IRI="http://www.w3.org/2011/http#"/>
-    <Prefix name="qudt" IRI="http://qudt.org/schema/qudt#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="s4ac" IRI="http://ns.inria.fr/s4ac/v2#"/>
-    <Prefix name="soft" IRI="http://www.w3.org/2007/uwa/context/software.owl#"/>
-    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
-    <Prefix name="hrest" IRI="http://www.wsmo.org/ns/hrests#"/>
-    <Prefix name="vital" IRI="http://vital-iot.eu/ontology/ns/"/>
-    <Prefix name="sawsdl" IRI="http://www.w3.org/ns/sawsdl#"/>
-    <Prefix name="openiot" IRI="http://openiot.eu/ontology/ns/"/>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal datatypeIRI="&xsd;string">Please report any error to 
+     xmlns:dcn="http://www.w3.org/2007/uwa/context/deliveryContext.owl#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:wsl="http://www.wsmo.org/ns/wsmo-lite#"
+     xmlns:hrest="http://www.wsmo.org/ns/hrests#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:hard="http://www.w3.org/2007/uwa/context/hardware.owl#"
+     xmlns:net="http://www.w3.org/2007/uwa/context/network.owl#"
+     xmlns:foaf="http://xmlns.com/foaf/"
+     xmlns:soft="http://www.w3.org/2007/uwa/context/software.owl#"
+     xmlns:otn="http://www.pms.ifi.lmu.de/rewerse-wga1/otn/OTN.owl"
+     xmlns:openiot="http://openiot.eu/ontology/ns/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:s4ac="http://ns.inria.fr/s4ac/v2#"
+     xmlns:http="http://www.w3.org/2011/http#"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vital="http://vital-iot.eu/ontology/ns/"
+     xmlns:sawsdl="http://www.w3.org/ns/sawsdl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://vital-iot.eu/ontology/ns/">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology is developed by Insight-NUIG ( http://www.insight-centre.org ) for the VITAL project ( http://vital-iot.eu ). </rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology describes classes and properties for VITAL Project..</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please report any error to 
 zeeshan.jan_at_insight-centre.org
-martin.serrano_at_insight-centre_org</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal datatypeIRI="&xsd;string">This ontology is developed by Insight-NUIG ( http://www.insight-centre.org ) for the VITAL project ( http://vital-iot.eu ). </Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/license"/>
-        <IRI>http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html</IRI>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/identifier"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">http://vital-iot.eu/ontology/ns</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal datatypeIRI="&xsd;string">This ontology describes classes and properties for VITAL Project..</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/rights"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">Copyright 2014 - 2017 VITAL.</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
-        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">VITAL Ontology</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <Literal datatypeIRI="&rdf;PlainLiteral">http://vital-iot.eu</Literal>
-    </Annotation>
-    <Declaration>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="msm:Service"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn:Observation"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn:System"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ActiveRequests"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AirManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Arrival"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Aspect"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Availability"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AvailableBikes"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AvailableDesks"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AvailableMem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="BusArrival"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CEPFilterSensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CEPFilterStaticDataSensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CEPFilterStaticQuerySensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CEPFilteringService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CEPICOManagementService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CEPSensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ComplexEvent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ConfigurationService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ConnDMS"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ConnectionStability"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Continuous"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CreateCEPICO"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CreateContinuousFilter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CreateOperation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="CreateWorkflow"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DeleteCEPICO"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DeleteContinuousFilter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DeleteWorkflow"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DeployMetaService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Disconnected"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DiscoverICOs"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DiscoverServices"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DiscoverSystems"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DiscoveryService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="EmergencyServices"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="EmptyDocks"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="EnergyManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Errors"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ExecuteOperation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ExecuteWorkflow"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FilterStaticData"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FilterStaticQuery"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FilteringService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Footfall"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FootfallDown"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FootfallUp"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetCEPICO"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetCEPICOs"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetConfiguration"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetContinuousFilter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetContinuousFilters"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetMetaService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetMetaServiceList"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetObservations"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetOperation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetOperationList"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetPerformanceMetrics"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetSLAParameters"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetSensorStatus"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetSupportedPerformanceMetrics"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetSupportedSLAParameters"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetSystemStatus"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="GetWorkflowList"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="HealthManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Intermittent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Line"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="MaxRequests"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Mobile"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Model"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="MonitoringSensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="MonitoringService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="MovementPattern"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="NO2"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="NetworkConnection"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ObservationService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Operational"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="OperationalState"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="OrchestratorService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="PendingRequests"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Predicted"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="RailArrival"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="RecreationManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ResamplingFilter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ResponseTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Running"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ServedRequests"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ServiceRequest"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SetConfiguration"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ShuttingDown"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SmartCity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="StartingUp"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Stationary"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SubscribeToObservationStream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SysLoad"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SysUptime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ThresholdFilter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TotalDocks"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrafficManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TransportManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrustAspect"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrustConcept"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrustEntity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrustParam"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrustedEntity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TrustedModel"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="TubeArrival"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Unavailable"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="UndeployMetaService"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="UnsubscribeFromObservationStream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="UpdateOperation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="UpdateWorkflow"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="UsedMem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="VitalSensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="VitalSystem"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="WasteManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="WaterManagement"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="dul:Entity"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="dcn:Device"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="hard:DeviceHardware"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="hard:HardwareStatus"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="net:NetworkSupport"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="soft:DeviceSoftware"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="http:Request"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://xmlns.com/foaf/0.1/Group"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ssn:hasSubSystem"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="direction"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasLastKnownLocation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasLocalizer"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasMovementPattern"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasNetworkConnection"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasNetworkSupport"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasStability"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="madeBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="managesSensor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="name"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="operator"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="providesService"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="providesSystem"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="serviceArea"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="status"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="dul:hasLocation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="hard:deviceHardware"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="hard:status"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="net:networkSupport"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="soft:deviceSoftware"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="TrustLevel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="data"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="dolceSpecification"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="hasName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="query"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="weight"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-        <Class abbreviatedIRI="ssn:System"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn:System"/>
-        <Class IRI="SmartCity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="AirManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Availability"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="AvailableBikes"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="AvailableDesks"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="BusArrival"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPFilterSensor"/>
-        <Class IRI="VitalSensor"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPFilterStaticDataSensor"/>
-        <Class IRI="CEPFilterSensor"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPFilterStaticQuerySensor"/>
-        <Class IRI="CEPFilterSensor"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPFilteringService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPICOManagementService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPSensor"/>
-        <Class IRI="VitalSensor"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CEPSensor"/>
-        <Class abbreviatedIRI="dcn:Device"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ConfigurationService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ConnDMS"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Continuous"/>
-        <Class IRI="ConnectionStability"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CreateCEPICO"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CreateContinuousFilter"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CreateOperation"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="CreateWorkflow"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DeleteCEPICO"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DeleteContinuousFilter"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DeleteWorkflow"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DeployMetaService"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Disconnected"/>
-        <Class IRI="ConnectionStability"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DiscoverICOs"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DiscoverServices"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DiscoverSystems"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DiscoveryService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="EmergencyServices"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="EmptyDocks"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="EnergyManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ExecuteOperation"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ExecuteWorkflow"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FilterStaticData"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FilterStaticQuery"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FilteringService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Footfall"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FootfallDown"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FootfallUp"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetCEPICO"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetCEPICOs"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetConfiguration"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetContinuousFilter"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetContinuousFilters"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetMetaService"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetMetaServiceList"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetObservations"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetOperation"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetOperationList"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetPerformanceMetrics"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetSLAParameters"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetSensorStatus"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetSupportedPerformanceMetrics"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetSupportedSLAParameters"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetSystemStatus"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="GetWorkflowList"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="HealthManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Intermittent"/>
-        <Class IRI="ConnectionStability"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Mobile"/>
-        <Class IRI="MovementPattern"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="MonitoringSensor"/>
-        <Class IRI="VitalSensor"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="MonitoringService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="NO2"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ObservationService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Operational"/>
-        <Class IRI="OperationalState"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="OrchestratorService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Predicted"/>
-        <Class IRI="MovementPattern"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="RailArrival"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="RecreationManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ResamplingFilter"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Running"/>
-        <Class IRI="OperationalState"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ServiceRequest"/>
-        <Class abbreviatedIRI="http:Request"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="SetConfiguration"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ShuttingDown"/>
-        <Class IRI="OperationalState"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="StartingUp"/>
-        <Class IRI="OperationalState"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Stationary"/>
-        <Class IRI="MovementPattern"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="SubscribeToObservationStream"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ThresholdFilter"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TotalDocks"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TrafficManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TransportManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TrustAspect"/>
-        <Class IRI="Aspect"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TrustParam"/>
-        <Class abbreviatedIRI="ssn:Observation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TrustedEntity"/>
-        <Class IRI="TrustEntity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TrustedModel"/>
-        <Class IRI="Model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="TubeArrival"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Unavailable"/>
-        <Class IRI="OperationalState"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="UndeployMetaService"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="UnsubscribeFromObservationStream"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="UpdateOperation"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="UpdateWorkflow"/>
-        <Class abbreviatedIRI="msm:Operation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="VitalSensor"/>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="VitalSensor"/>
-        <Class abbreviatedIRI="dcn:Device"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="VitalSystem"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="WasteManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="WaterManagement"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </SubClassOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasLastKnownLocation"/>
-        <ObjectProperty abbreviatedIRI="dul:hasLocation"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasLocalizer"/>
-        <ObjectProperty abbreviatedIRI="ssn:hasSubSystem"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasNetworkConnection"/>
-        <ObjectProperty abbreviatedIRI="ssn:hasSubSystem"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasNetworkSupport"/>
-        <ObjectProperty abbreviatedIRI="net:networkSupport"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="providesSystem"/>
-        <ObjectProperty abbreviatedIRI="ssn:hasSubSystem"/>
-    </SubObjectPropertyOf>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="direction"/>
-        <Class IRI="Line"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasLastKnownLocation"/>
-        <Class IRI="VitalSensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasLocalizer"/>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasMovementPattern"/>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasNetworkConnection"/>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasNetworkSupport"/>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasStability"/>
-        <Class IRI="NetworkConnection"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="madeBy"/>
-        <Class IRI="ServiceRequest"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="managesSensor"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="name"/>
-        <Class IRI="Line"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="operator"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="providesService"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="providesSystem"/>
-        <Class IRI="VitalSystem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="serviceArea"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="status"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="hard:status"/>
-        <Class abbreviatedIRI="hard:DeviceHardware"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="hard:status"/>
-        <Class abbreviatedIRI="soft:DeviceSoftware"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="direction"/>
-        <Class abbreviatedIRI="dul:Entity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasLastKnownLocation"/>
-        <Class abbreviatedIRI="dul:Entity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasLocalizer"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasMovementPattern"/>
-        <Class IRI="MovementPattern"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasNetworkConnection"/>
-        <Class IRI="NetworkConnection"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasNetworkSupport"/>
-        <Class abbreviatedIRI="net:NetworkSupport"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasStability"/>
-        <Class IRI="ConnectionStability"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="madeBy"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="managesSensor"/>
-        <Class IRI="VitalSensor"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="name"/>
-        <Class abbreviatedIRI="dul:Entity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="operator"/>
-        <Class abbreviatedIRI="dul:Entity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="providesService"/>
-        <Class abbreviatedIRI="msm:Service"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="providesSystem"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="serviceArea"/>
-        <Class abbreviatedIRI="dul:Entity"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="status"/>
-        <Class IRI="OperationalState"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="hard:status"/>
-        <Class abbreviatedIRI="hard:HardwareStatus"/>
-    </ObjectPropertyRange>
-    <DataPropertyDomain>
-        <DataProperty IRI="TrustLevel"/>
-        <Class IRI="TrustedEntity"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="data"/>
-        <Class IRI="CEPFilterStaticDataSensor"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="dolceSpecification"/>
-        <Class IRI="CEPFilterSensor"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="dolceSpecification"/>
-        <Class IRI="CEPSensor"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="hasName"/>
-        <Class abbreviatedIRI="ssn:IotSystem"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="hasName"/>
-        <Class abbreviatedIRI="ssn:Sensor"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="query"/>
-        <Class IRI="CEPFilterStaticQuerySensor"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="weight"/>
-        <Class IRI="TrustConcept"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="TrustLevel"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="data"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="dolceSpecification"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="hasName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="query"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="weight"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-</Ontology>
+martin.serrano_at_insight-centre_org</rdfs:comment>
+        <dc:identifier>http://vital-iot.eu/ontology/ns</dc:identifier>
+        <rdfs:seeAlso>http://vital-iot.eu</rdfs:seeAlso>
+        <terms:license rdf:resource="http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html"/>
+        <dc:rights>Copyright 2014 - 2017 VITAL.</dc:rights>
+        <dc:title xml:lang="en">VITAL Ontology</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/direction -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/direction">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/Line"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasLastKnownLocation -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasLastKnownLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasLocalizer -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasLocalizer">
+        <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasMovementPattern -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasMovementPattern">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasNetworkConnection -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasNetworkConnection">
+        <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/NetworkConnection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasNetworkSupport -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasNetworkSupport">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2007/uwa/context/network.owl#networkSupport"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasStability -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasStability">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/NetworkConnection"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/madeBy -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/madeBy">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/ServiceRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/managesSensor -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/managesSensor">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/name -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/name">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/Line"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/operator -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/operator">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/providesService -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/providesService">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/providesSystem -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/providesSystem">
+        <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/VitalSystem"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/serviceArea -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/serviceArea">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/status -->
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/status">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#deviceHardware -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#deviceHardware"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#status -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#status">
+        <rdfs:domain rdf:resource="http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/network.owl#networkSupport -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/network.owl#networkSupport"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/software.owl#deviceSoftware -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/software.owl#deviceSoftware"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/TrustLevel">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/TrustedEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/data -->
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/data">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/dolceSpecification -->
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/dolceSpecification">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterSensor"/>
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPSensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/hasName">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/query -->
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/query">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/weight -->
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/weight">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/TrustConcept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://iserve.kmi.open.ac.uk/ns/msm#Operation -->
+
+    <owl:Class rdf:about="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    
+
+
+    <!-- http://iserve.kmi.open.ac.uk/ns/msm#Service -->
+
+    <owl:Class rdf:about="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#IotSystem -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#IotSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Observation -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Property -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#System -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#System">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/SmartCity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ActiveRequests -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ActiveRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AirManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AirManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Arrival -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Arrival"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Aspect -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Aspect"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Availability -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Availability">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AvailableBikes -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AvailableBikes">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AvailableDesks -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AvailableDesks">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AvailableMem -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AvailableMem"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/BusArrival -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/BusArrival">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilterSensor -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilterSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilteringService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilteringService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPICOManagementService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPICOManagementService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPSensor -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ComplexEvent -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ComplexEvent"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ConfigurationService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ConfigurationService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ConnDMS -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ConnDMS">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ConnectionStability -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Continuous -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Continuous">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateCEPICO -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateCEPICO">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateContinuousFilter -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateContinuousFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateOperation -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateWorkflow -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeleteCEPICO -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeleteCEPICO">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeleteContinuousFilter -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeleteContinuousFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeleteWorkflow -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeleteWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeployMetaService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeployMetaService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Disconnected -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Disconnected">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoverICOs -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoverICOs">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoverServices -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoverServices">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoverSystems -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoverSystems">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoveryService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoveryService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/EmergencyServices -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/EmergencyServices">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/EmptyDocks -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/EmptyDocks">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/EnergyManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/EnergyManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Errors -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Errors"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ExecuteOperation -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ExecuteOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ExecuteWorkflow -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ExecuteWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FilterStaticData -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FilterStaticData">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FilterStaticQuery -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FilterStaticQuery">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FilteringService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FilteringService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Footfall -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Footfall">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FootfallDown -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FootfallDown">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FootfallUp -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FootfallUp">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetCEPICO -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetCEPICO">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetCEPICOs -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetCEPICOs">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetConfiguration -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetConfiguration">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetContinuousFilter -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetContinuousFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetContinuousFilters -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetContinuousFilters">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetMetaService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetMetaService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetMetaServiceList -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetMetaServiceList">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetObservations -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetObservations">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetOperation -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetOperationList -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetOperationList">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetPerformanceMetrics -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetPerformanceMetrics">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSLAParameters -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSLAParameters">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSensorStatus -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSensorStatus">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSupportedPerformanceMetrics -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSupportedPerformanceMetrics">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSupportedSLAParameters -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSupportedSLAParameters">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSystemStatus -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSystemStatus">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetWorkflowList -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetWorkflowList">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/HealthManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/HealthManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Intermittent -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Intermittent">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Line -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Line"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MaxRequests -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MaxRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Mobile -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Mobile">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Model -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Model"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MonitoringSensor -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MonitoringSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MonitoringService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MonitoringService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MovementPattern -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/NO2 -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/NO2">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/NetworkConnection -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/NetworkConnection"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ObservationService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ObservationService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Operational -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Operational">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/OperationalState -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/OrchestratorService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/OrchestratorService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/PendingRequests -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/PendingRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Predicted -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Predicted">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/RailArrival -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/RailArrival">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/RecreationManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/RecreationManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ResamplingFilter -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ResamplingFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ResponseTime -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ResponseTime"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Running -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Running">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ServedRequests -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ServedRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ServiceRequest -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ServiceRequest">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2011/http#Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SetConfiguration -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SetConfiguration">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ShuttingDown -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ShuttingDown">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SmartCity -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SmartCity"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/StartingUp -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/StartingUp">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Stationary -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Stationary">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SubscribeToObservationStream -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SubscribeToObservationStream">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SysLoad -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SysLoad"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SysUptime -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SysUptime"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ThresholdFilter -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ThresholdFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TotalDocks -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TotalDocks">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrafficManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrafficManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TransportManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TransportManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustAspect -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustAspect">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/Aspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustConcept -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustConcept"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustEntity -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustEntity"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustParam -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustParam">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustedEntity -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustedEntity">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/TrustEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustedModel -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustedModel">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TubeArrival -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TubeArrival">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Unavailable -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Unavailable">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UndeployMetaService -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UndeployMetaService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UnsubscribeFromObservationStream -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UnsubscribeFromObservationStream">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UpdateOperation -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UpdateOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UpdateWorkflow -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UpdateWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UsedMem -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UsedMem"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/VitalSensor -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/VitalSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/VitalSystem -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/VitalSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/WasteManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/WasteManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/WaterManagement -->
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/WaterManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device -->
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware -->
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus -->
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport -->
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware -->
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware"/>
+    
+
+
+    <!-- http://www.w3.org/2011/http#Request -->
+
+    <owl:Class rdf:about="http://www.w3.org/2011/http#Request"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+</rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
