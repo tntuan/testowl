@@ -1,0 +1,1685 @@
+{
+  "@context" : {
+    "Counter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Counter"
+    },
+    "Precision" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Precision"
+    },
+    "ElectricCurrent" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricCurrent"
+    },
+    "Heating" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Heating"
+    },
+    "VehicleOverspeedState" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VehicleOverspeedState"
+    },
+    "VoiceCommandSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VoiceCommandSensor"
+    },
+    "Rainfall" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Rainfall"
+    },
+    "Watt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Watt"
+    },
+    "SpeedInstantaneous" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SpeedInstantaneous"
+    },
+    "FrequencySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FrequencySensor"
+    },
+    "FuelLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FuelLevel"
+    },
+    "RadiationParticlesPerMinute" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RadiationParticlesPerMinute"
+    },
+    "PulseOxymeter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PulseOxymeter"
+    },
+    "SoilTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoilTemperature"
+    },
+    "hasCoverage" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasCoverage",
+      "@type" : "@id"
+    },
+    "ReactivePower" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ReactivePower"
+    },
+    "equivalentClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#equivalentClass"
+    },
+    "Mileage" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Mileage"
+    },
+    "Neighbours" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Neighbours"
+    },
+    "Sirens" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Sirens"
+    },
+    "ChemicalAgentAtmosphericConcentrationSO2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationSO2"
+    },
+    "Crowd" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Crowd"
+    },
+    "Cupboard" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Cupboard"
+    },
+    "SeatBeltTensionSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SeatBeltTensionSensor"
+    },
+    "Unit" : {
+      "@id" : "http://purl.org/NET/ssnx/qu/qu#Unit"
+    },
+    "Index" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Index"
+    },
+    "MotionState" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MotionState"
+    },
+    "metadataValue" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#metadataValue",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "DistanceNextBus" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DistanceNextBus"
+    },
+    "GramPerLitre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GramPerLitre"
+    },
+    "Communication" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Communication"
+    },
+    "ChemicalAgentWaterConcentrationNO3Ion" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentrationNO3Ion"
+    },
+    "AccelerationInstantaneous" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AccelerationInstantaneous"
+    },
+    "CountStatellitesSignalReceived" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountStatellitesSignalReceived"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "TimeRelatedStateDriver2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeRelatedStateDriver2"
+    },
+    "Ventilation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Ventilation"
+    },
+    "Lamp" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Lamp"
+    },
+    "RevolutionsPerMinute" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RevolutionsPerMinute"
+    },
+    "hasMetaData" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasMetaData",
+      "@type" : "@id"
+    },
+    "onPlatform" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#onPlatform",
+      "@type" : "@id"
+    },
+    "QRCode" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#QRCode"
+    },
+    "TemperatureEngine" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TemperatureEngine"
+    },
+    "Conductivity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Conductivity"
+    },
+    "Direction" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Direction"
+    },
+    "Tonne" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Tonne"
+    },
+    "Humidity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Humidity"
+    },
+    "DewPointSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DewPointSensor"
+    },
+    "ElectricPotential" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricPotential"
+    },
+    "DishWasher" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DishWasher"
+    },
+    "MilligramPerLitre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MilligramPerLitre"
+    },
+    "ChemicalAgentAtmosphericConcentrationCO" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationCO"
+    },
+    "Candela" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Candela"
+    },
+    "SensingDevice" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"
+    },
+    "Microwave" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Microwave"
+    },
+    "MillimetrePerHour" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MillimetrePerHour"
+    },
+    "HeartBeat" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#HeartBeat"
+    },
+    "Platform" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Platform"
+    },
+    "license" : {
+      "@id" : "http://creativecommons.org/ns#license"
+    },
+    "FallDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FallDetector"
+    },
+    "PresenceStateDriverCard2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceStateDriverCard2"
+    },
+    "IonisingRadiation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#IonisingRadiation"
+    },
+    "Deployment" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Deployment"
+    },
+    "RoadTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RoadTemperature"
+    },
+    "WindChillSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WindChillSensor"
+    },
+    "CountPeople" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountPeople"
+    },
+    "FogLamp" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FogLamp"
+    },
+    "FoodTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FoodTemperature"
+    },
+    "Coverage" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"
+    },
+    "ECG" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ECG"
+    },
+    "WaterThermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterThermometer"
+    },
+    "Kelvin" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Kelvin"
+    },
+    "Volt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Volt"
+    },
+    "Health" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Health"
+    },
+    "MicrogramPerCubicMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MicrogramPerCubicMetre"
+    },
+    "bibliographicCitation" : {
+      "@id" : "http://purl.org/dc/terms/bibliographicCitation"
+    },
+    "TagDevice" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#TagDevice"
+    },
+    "MobHoPrepSuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MobHoPrepSuccRate"
+    },
+    "PressureSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PressureSensor"
+    },
+    "PPM" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PPM"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued"
+    },
+    "SolarRadiationSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SolarRadiationSensor"
+    },
+    "Thing" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Thing"
+    },
+    "WeatherLuminosity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WeatherLuminosity"
+    },
+    "VehicleCountSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VehicleCountSensor"
+    },
+    "H2SSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#H2SSensor"
+    },
+    "VoltageSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VoltageSensor"
+    },
+    "OxidationReductionPotentialSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#OxidationReductionPotentialSensor"
+    },
+    "VoltAmpereReactive" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VoltAmpereReactive"
+    },
+    "ChemicalAgentAtmosphericConcentrationNO2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationNO2"
+    },
+    "Source" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Source"
+    },
+    "LightSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LightSensor"
+    },
+    "ChemicalAgentWaterConcentration" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentration"
+    },
+    "SmokeDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SmokeDetector"
+    },
+    "TouchSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TouchSensor"
+    },
+    "IEEE802154InterfaceEnergyMeter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#IEEE802154InterfaceEnergyMeter"
+    },
+    "attachedSystem" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#attachedSystem",
+      "@type" : "@id"
+    },
+    "ConstructionWork" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ConstructionWork"
+    },
+    "MobMobilitySuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MobMobilitySuccRate"
+    },
+    "DegreeFahrenheit" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DegreeFahrenheit"
+    },
+    "GPSSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GPSSensor"
+    },
+    "hasMeasurementType" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#hasMeasurementType",
+      "@type" : "@id"
+    },
+    "OpticalDustSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#OpticalDustSensor"
+    },
+    "AirTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirTemperature"
+    },
+    "Centimetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Centimetre"
+    },
+    "LeafWetness" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LeafWetness"
+    },
+    "PartsPerBillion" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PartsPerBillion"
+    },
+    "Voltage" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Voltage"
+    },
+    "KiloWattHour" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#KiloWattHour"
+    },
+    "WaterNH4IonSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterNH4IonSensor"
+    },
+    "Transportation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Transportation"
+    },
+    "RotationalSpeed" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RotationalSpeed"
+    },
+    "RotationalSpeedEngine" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RotationalSpeedEngine"
+    },
+    "SunPositionElevation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SunPositionElevation"
+    },
+    "Invalid" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Invalid"
+    },
+    "WorkingState" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WorkingState"
+    },
+    "ElectricField" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricField"
+    },
+    "Animals" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Animals"
+    },
+    "MethaneSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MethaneSensor"
+    },
+    "Visibility" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Visibility"
+    },
+    "DewPoint" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DewPoint"
+    },
+    "WorkingStateDriver" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WorkingStateDriver"
+    },
+    "Microampere" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Microampere"
+    },
+    "Object" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Object"
+    },
+    "RoadSurfaceThermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RoadSurfaceThermometer"
+    },
+    "DirectionHeading" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DirectionHeading"
+    },
+    "Emotion" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Emotion"
+    },
+    "exposedBy" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy",
+      "@type" : "@id"
+    },
+    "hasValue" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#hasValue",
+      "@type" : "@id"
+    },
+    "MetrePerSecondSquare" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MetrePerSecondSquare"
+    },
+    "DecibelMilliwatt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DecibelMilliwatt"
+    },
+    "Radian" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Radian"
+    },
+    "observationSamplingTime" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#observationSamplingTime",
+      "@type" : "@id"
+    },
+    "ChemicalAgentAtmosphericConcentrationNO" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationNO"
+    },
+    "Speed" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Speed"
+    },
+    "WorkingStateDriver2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WorkingStateDriver2"
+    },
+    "DustSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DustSensor"
+    },
+    "Decibel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Decibel"
+    },
+    "Instant" : {
+      "@id" : "http://www.w3.org/2006/time#Instant"
+    },
+    "Ampere" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Ampere"
+    },
+    "Motion" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Motion"
+    },
+    "ElectricalSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricalSensor"
+    },
+    "Litre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Litre"
+    },
+    "SNR" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SNR"
+    },
+    "Pascal" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Pascal"
+    },
+    "SunPositionElevationSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SunPositionElevationSensor"
+    },
+    "long" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#long"
+    },
+    "AirThermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirThermometer"
+    },
+    "hasDataValue" : {
+      "@id" : "http://www.loa.istc.cnr.it/ontologies/DUL.owl#hasDataValue"
+    },
+    "ChemicalAgentConcentration" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentConcentration"
+    },
+    "RoomTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RoomTemperature"
+    },
+    "Milliwatt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Milliwatt"
+    },
+    "MillivoltPerMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MillivoltPerMetre"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "CountAvailableTaxis" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountAvailableTaxis"
+    },
+    "MetaData" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#MetaData"
+    },
+    "SecondTime" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SecondTime"
+    },
+    "CO2Sensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CO2Sensor"
+    },
+    "hasMetadata" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasMetadata",
+      "@type" : "@id"
+    },
+    "PublicTransit" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PublicTransit"
+    },
+    "Inch" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Inch"
+    },
+    "IntUlThroughputKbps" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#IntUlThroughputKbps"
+    },
+    "Sound" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Sound"
+    },
+    "WeatherPrecipitation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WeatherPrecipitation"
+    },
+    "SensorOutput" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#SensorOutput"
+    },
+    "hasDomainOfInterest" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#hasDomainOfInterest",
+      "@type" : "@id"
+    },
+    "ResAverageLicConnectedUsers" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ResAverageLicConnectedUsers"
+    },
+    "ConductivitySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ConductivitySensor"
+    },
+    "interfaceType" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#interfaceType",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Potassium" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Potassium"
+    },
+    "Barcode" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Barcode"
+    },
+    "inXSDDateTime" : {
+      "@id" : "http://www.w3.org/2006/time#inXSDDateTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Metre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Metre"
+    },
+    "Bus" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Bus"
+    },
+    "Pedometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Pedometer"
+    },
+    "DoorStatus" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DoorStatus"
+    },
+    "VehiclePresenceDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VehiclePresenceDetector"
+    },
+    "Count" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Count"
+    },
+    "ThingProperty" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#ThingProperty"
+    },
+    "Boiler" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Boiler"
+    },
+    "radius" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#radius",
+      "@type" : "http://www.w3.org/2001/XMLSchema#double"
+    },
+    "SO2Sensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SO2Sensor"
+    },
+    "Kilometre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Kilometre"
+    },
+    "SoilThermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoilThermometer"
+    },
+    "Thermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Thermometer"
+    },
+    "Resolution" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Resolution"
+    },
+    "VoiceCommandController" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VoiceCommandController"
+    },
+    "SkinConductance" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SkinConductance"
+    },
+    "DeviceUptime" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DeviceUptime"
+    },
+    "BoardThermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BoardThermometer"
+    },
+    "CountAvailableBicycles" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountAvailableBicycles"
+    },
+    "WindDirectionSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WindDirectionSensor"
+    },
+    "ObservationValue" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#ObservationValue"
+    },
+    "RadianPerSecond" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RadianPerSecond"
+    },
+    "MilligramPerSquareMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MilligramPerSquareMetre"
+    },
+    "hasMeasurementProperty" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementProperty",
+      "@type" : "@id"
+    },
+    "KilogramPerCubicMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#KilogramPerCubicMetre"
+    },
+    "OperationOutput" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#OperationOutput"
+    },
+    "LocationQK" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LocationQK"
+    },
+    "id" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#id",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mappableTo" : {
+      "@id" : "http://www.loa.istc.cnr.it/ontologies/DUL.owl#mappableTo"
+    },
+    "Fridge" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Fridge"
+    },
+    "Scale" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Scale"
+    },
+    "Miles" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Miles"
+    },
+    "Pound" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Pound"
+    },
+    "SoundSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoundSensor"
+    },
+    "Temperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Temperature"
+    },
+    "AutomaticSensing" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AutomaticSensing"
+    },
+    "RelativeHumidity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RelativeHumidity"
+    },
+    "Telephone" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Telephone"
+    },
+    "SPO2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SPO2"
+    },
+    "ChemicalAgentAtmosphericConcentrationVOC" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationVOC"
+    },
+    "VOCSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VOCSensor"
+    },
+    "MeasurementType" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MeasurementType"
+    },
+    "Odometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Odometer"
+    },
+    "Glucometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Glucometer"
+    },
+    "MicrowattPerSquareCentimetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MicrowattPerSquareCentimetre"
+    },
+    "Percent" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Percent"
+    },
+    "SolarRadiation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SolarRadiation"
+    },
+    "DoorStateSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DoorStateSensor"
+    },
+    "BloodPressure" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BloodPressure"
+    },
+    "MeasurementProperty" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#MeasurementProperty"
+    },
+    "LoRaInterface" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LoRaInterface"
+    },
+    "PresenceDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceDetector"
+    },
+    "ElectricField900Mhz" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricField900Mhz"
+    },
+    "O3Sensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#O3Sensor"
+    },
+    "observedBy" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#observedBy",
+      "@type" : "@id"
+    },
+    "Attribute" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Attribute"
+    },
+    "Salinity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Salinity"
+    },
+    "SoundPressureLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoundPressureLevel"
+    },
+    "BloodPressureSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BloodPressureSensor"
+    },
+    "Milliampere" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Milliampere"
+    },
+    "Centibar" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Centibar"
+    },
+    "GramPerCubicMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GramPerCubicMetre"
+    },
+    "TimeOfArrivalNextBus" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeOfArrivalNextBus"
+    },
+    "DistanceNextBusSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DistanceNextBusSensor"
+    },
+    "Farad" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Farad"
+    },
+    "Step" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Step"
+    },
+    "Computer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Computer"
+    },
+    "WaterTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterTemperature"
+    },
+    "FillLevelGasTank1" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FillLevelGasTank1"
+    },
+    "LuminousFlux" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LuminousFlux"
+    },
+    "Precipitation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Precipitation"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator"
+    },
+    "BuildingTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BuildingTemperature"
+    },
+    "PeopleStayDurationAverage" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PeopleStayDurationAverage"
+    },
+    "SoilMoistureTension" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoilMoistureTension"
+    },
+    "DeltaDewPoint" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DeltaDewPoint"
+    },
+    "hasSource" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#hasSource",
+      "@type" : "@id"
+    },
+    "Energy" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Energy"
+    },
+    "Sodium" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Sodium"
+    },
+    "SpeedSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SpeedSensor"
+    },
+    "KilometrePerHour" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#KilometrePerHour"
+    },
+    "Magnetometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Magnetometer"
+    },
+    "NH3Sensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#NH3Sensor"
+    },
+    "Proximity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Proximity"
+    },
+    "PresenceStateDriverCard1" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceStateDriverCard1"
+    },
+    "RFID" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RFID"
+    },
+    "PresenceStateParking" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceStateParking"
+    },
+    "Millibar" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Millibar"
+    },
+    "Okta" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Okta"
+    },
+    "hasService" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasService",
+      "@type" : "@id"
+    },
+    "MinuteTime" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MinuteTime"
+    },
+    "Door" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Door"
+    },
+    "Mass" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Mass"
+    },
+    "RecognizedActivity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RecognizedActivity"
+    },
+    "MileageDistanceToService" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MileageDistanceToService"
+    },
+    "BoardTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BoardTemperature"
+    },
+    "location" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#location",
+      "@type" : "@id"
+    },
+    "Coordinates" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Coordinates"
+    },
+    "CurrentSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CurrentSensor"
+    },
+    "GasDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GasDetector"
+    },
+    "Weight" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Weight"
+    },
+    "HeartBeatSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#HeartBeatSensor"
+    },
+    "isMobile" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isMobile",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "SoundSource" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoundSource"
+    },
+    "Capacitance" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Capacitance"
+    },
+    "Hour" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Hour"
+    },
+    "Irrigation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Irrigation"
+    },
+    "TemperatureWasteContainer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TemperatureWasteContainer"
+    },
+    "CloudCoverSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CloudCoverSensor"
+    },
+    "Traffic" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Traffic"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/elements/1.1/rights"
+    },
+    "ResponseTime" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#ResponseTime"
+    },
+    "VirtualEntity" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#VirtualEntity"
+    },
+    "exposes" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposes",
+      "@type" : "@id"
+    },
+    "DeviceUptimeClock" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DeviceUptimeClock"
+    },
+    "ChemicalAgentAtmosphericConcentrationAirParticles" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationAirParticles"
+    },
+    "SnowChains" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SnowChains"
+    },
+    "TimeRelatedStateDriver" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeRelatedStateDriver"
+    },
+    "AtmosphericPressure" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AtmosphericPressure"
+    },
+    "ElectricField2400MHz" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricField2400MHz"
+    },
+    "LoRaInterfaceEnergyMeter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LoRaInterfaceEnergyMeter"
+    },
+    "DirectionOfArrivalSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DirectionOfArrivalSensor"
+    },
+    "Clock" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Clock"
+    },
+    "UltrasonicSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#UltrasonicSensor"
+    },
+    "alt" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+    },
+    "LuminousIntensity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LuminousIntensity"
+    },
+    "ChemicalAgentAtmosphericConcentration" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentration"
+    },
+    "FillLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FillLevel"
+    },
+    "Acceleration" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Acceleration"
+    },
+    "identifier" : {
+      "@id" : "http://purl.org/dc/elements/1.1/identifier"
+    },
+    "CholesterolSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CholesterolSensor"
+    },
+    "Pressure" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Pressure"
+    },
+    "hasSubSystem" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem",
+      "@type" : "@id"
+    },
+    "QuantityKind" : {
+      "@id" : "http://purl.org/NET/ssnx/qu/qu#QuantityKind"
+    },
+    "NO2Sensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#NO2Sensor"
+    },
+    "isSubSystemOf" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isSubSystemOf",
+      "@type" : "@id"
+    },
+    "PeopleStayDurationSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PeopleStayDurationSensor"
+    },
+    "FillLevelGasTank" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FillLevelGasTank"
+    },
+    "TimeOfArrivalNextBusSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeOfArrivalNextBusSensor"
+    },
+    "NOSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#NOSensor"
+    },
+    "ChemicalAgentAtmosphericConcentrationO3" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationO3"
+    },
+    "Distance" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Distance"
+    },
+    "Kilogram" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Kilogram"
+    },
+    "Millimetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Millimetre"
+    },
+    "SaltMeter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SaltMeter"
+    },
+    "DegreeCelsius" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DegreeCelsius"
+    },
+    "Lumen" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Lumen"
+    },
+    "AirQuality" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirQuality"
+    },
+    "altRelative" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative"
+    },
+    "KilobitsPerSecond" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#KilobitsPerSecond"
+    },
+    "CloudCover" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CloudCover"
+    },
+    "PresenceStatePeople" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceStatePeople"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "Hydrophone" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Hydrophone"
+    },
+    "PH" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PH"
+    },
+    "Fan" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Fan"
+    },
+    "RadiationParticleDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RadiationParticleDetector"
+    },
+    "interfaceDescription" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#interfaceDescription",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "GyroscopeSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GyroscopeSensor"
+    },
+    "TV" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TV"
+    },
+    "Place" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Place"
+    },
+    "ChemicalAgentAtmosphericConcentrationNH3" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationNH3"
+    },
+    "IntDlLatency" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#IntDlLatency"
+    },
+    "BloodGlucose" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BloodGlucose"
+    },
+    "IntUlPacketLoss" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#IntUlPacketLoss"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "Calcium" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Calcium"
+    },
+    "Point" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+    },
+    "SoilHumidity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoilHumidity"
+    },
+    "Window" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Window"
+    },
+    "AlarmSystem" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AlarmSystem"
+    },
+    "Lux" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Lux"
+    },
+    "Cholesterol" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Cholesterol"
+    },
+    "Manual" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Manual"
+    },
+    "PeopleCountSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PeopleCountSensor"
+    },
+    "VisibilitySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VisibilitySensor"
+    },
+    "hasDeployment" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#hasDeployment",
+      "@type" : "@id"
+    },
+    "BatteryLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BatteryLevel"
+    },
+    "Microwatt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Microwatt"
+    },
+    "ElectricCharge" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricCharge"
+    },
+    "Ohm" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Ohm"
+    },
+    "ShakeSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ShakeSensor"
+    },
+    "EAQI" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#EAQI"
+    },
+    "SpeedAverage" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SpeedAverage"
+    },
+    "Gauss" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Gauss"
+    },
+    "Drawer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Drawer"
+    },
+    "VoiceCommand" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VoiceCommand"
+    },
+    "hasDirection" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#hasDirection",
+      "@type" : "@id"
+    },
+    "Environment" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Environment"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "WorkingStateDriver1" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WorkingStateDriver1"
+    },
+    "AccInitialERabSetupSuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AccInitialERabSetupSuccRate"
+    },
+    "TimeOfArrivalSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeOfArrivalSensor"
+    },
+    "CountEmptyDockingPoints" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountEmptyDockingPoints"
+    },
+    "GyrometerSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GyrometerSensor"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/elements/1.1/source"
+    },
+    "BeatPerMinute" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BeatPerMinute"
+    },
+    "OxygenSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#OxygenSensor"
+    },
+    "ElectricFieldSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricFieldSensor"
+    },
+    "SecondAngle" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SecondAngle"
+    },
+    "Milligram" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Milligram"
+    },
+    "Freezer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Freezer"
+    },
+    "Microgram" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Microgram"
+    },
+    "lat" : {
+      "@id" : "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+    },
+    "SiemensPerMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SiemensPerMetre"
+    },
+    "Seismometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Seismometer"
+    },
+    "StayingPeopleCountSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#StayingPeopleCountSensor"
+    },
+    "WiFiInterfaceEnergyMeter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WiFiInterfaceEnergyMeter"
+    },
+    "MotionStateVehicle" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MotionStateVehicle"
+    },
+    "WaterLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterLevel"
+    },
+    "SoundPressureLevelAmbient" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoundPressureLevelAmbient"
+    },
+    "Tesla" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Tesla"
+    },
+    "MmHg" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MmHg"
+    },
+    "CoffeeMachine" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CoffeeMachine"
+    },
+    "BoardVoltageSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BoardVoltageSensor"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified"
+    },
+    "COSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#COSensor"
+    },
+    "Frequency" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Frequency"
+    },
+    "Year" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Year"
+    },
+    "isAssociatedWith" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isAssociatedWith",
+      "@type" : "@id"
+    },
+    "observedProperty" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#observedProperty",
+      "@type" : "@id"
+    },
+    "TrafficIntensity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TrafficIntensity"
+    },
+    "NFC" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#NFC"
+    },
+    "WashingMachine" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WashingMachine"
+    },
+    "FillLevelGasTank2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FillLevelGasTank2"
+    },
+    "ESP" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ESP"
+    },
+    "MetrePerSecond" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MetrePerSecond"
+    },
+    "hasUnit" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit",
+      "@type" : "@id"
+    },
+    "madeObservation" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#madeObservation",
+      "@type" : "@id"
+    },
+    "Degree" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Degree"
+    },
+    "AirConditioner" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirConditioner"
+    },
+    "Hertz" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Hertz"
+    },
+    "WeightSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WeightSensor"
+    },
+    "Timestamp" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Timestamp"
+    },
+    "MileageTotal" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MileageTotal"
+    },
+    "MeasurementCapability" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#MeasurementCapability"
+    },
+    "date" : {
+      "@id" : "http://purl.org/dc/elements/1.1/date"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "Metadata" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Metadata"
+    },
+    "MmolPerLitre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MmolPerLitre"
+    },
+    "Coulomb" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Coulomb"
+    },
+    "TimeOfArrival" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeOfArrival"
+    },
+    "AirPollution" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirPollution"
+    },
+    "HDOP" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#HDOP"
+    },
+    "ChemicalAgentAtmosphericConcentrationDust" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentAtmosphericConcentrationDust"
+    },
+    "Entity" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"
+    },
+    "Calibration" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Calibration"
+    },
+    "Latency" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Latency"
+    },
+    "ThrottleSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ThrottleSensor"
+    },
+    "AlcoholLevel" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AlcoholLevel"
+    },
+    "endpoint" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#endpoint",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "DecibelA" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DecibelA"
+    },
+    "Weather" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Weather"
+    },
+    "observationResult" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#observationResult",
+      "@type" : "@id"
+    },
+    "Gram" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Gram"
+    },
+    "Illuminance" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Illuminance"
+    },
+    "City" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#City"
+    },
+    "BodyThermometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BodyThermometer"
+    },
+    "FuelConsumptionTotal" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FuelConsumptionTotal"
+    },
+    "HouseholdApplianceTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#HouseholdApplianceTemperature"
+    },
+    "ProximitySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ProximitySensor"
+    },
+    "WaterNO3IonSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterNO3IonSensor"
+    },
+    "Shower" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Shower"
+    },
+    "DewPointTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DewPointTemperature"
+    },
+    "ElectricField1800MHz" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricField1800MHz"
+    },
+    "Agriculture" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Agriculture"
+    },
+    "WindDirection" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WindDirection"
+    },
+    "SystolicBloodPressure" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SystolicBloodPressure"
+    },
+    "ActuatingDevice" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#ActuatingDevice"
+    },
+    "Blind" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Blind"
+    },
+    "IntDlThroughputKbps" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#IntDlThroughputKbps"
+    },
+    "BuildingAutomation" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BuildingAutomation"
+    },
+    "ActivePower" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ActivePower"
+    },
+    "WaterConductivitySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterConductivitySensor"
+    },
+    "MilligramPerCubicMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MilligramPerCubicMetre"
+    },
+    "Lavatory" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Lavatory"
+    },
+    "hasAttribute" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasAttribute",
+      "@type" : "@id"
+    },
+    "GaseousPollutantSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#GaseousPollutantSensor"
+    },
+    "Circle" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Circle"
+    },
+    "LitrePer100Kilometres" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LitrePer100Kilometres"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "HumanPresenceDetector" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#HumanPresenceDetector"
+    },
+    "Service" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"
+    },
+    "CO2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CO2"
+    },
+    "Polygon" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Polygon"
+    },
+    "FuelConsumption" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FuelConsumption"
+    },
+    "Others" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Others"
+    },
+    "PrecipitationSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PrecipitationSensor"
+    },
+    "TimeRelatedStateDriver1" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeRelatedStateDriver1"
+    },
+    "SpeedMedian" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SpeedMedian"
+    },
+    "HumiditySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#HumiditySensor"
+    },
+    "Curtain" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Curtain"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/elements/1.1/contributor"
+    },
+    "Millilitre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Millilitre"
+    },
+    "DegreeAngle" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DegreeAngle"
+    },
+    "Accelerometer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Accelerometer"
+    },
+    "Tourism" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Tourism"
+    },
+    "EnergyDOI" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#EnergyDOI"
+    },
+    "System" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#System"
+    },
+    "AccInitialERabEstabSuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AccInitialERabEstabSuccRate"
+    },
+    "BodyTemperature" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#BodyTemperature"
+    },
+    "Rectangle" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Rectangle"
+    },
+    "PresenceStateEmergencyVehicle" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceStateEmergencyVehicle"
+    },
+    "metadataType" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#metadataType",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "EnergyMeter" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#EnergyMeter"
+    },
+    "Sink" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Sink"
+    },
+    "DomainOfInterest" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DomainOfInterest"
+    },
+    "AccS1SigEstabSuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AccS1SigEstabSuccRate"
+    },
+    "CountPeopleMoving" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountPeopleMoving"
+    },
+    "WaterO2IonSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterO2IonSensor"
+    },
+    "MagneticField" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MagneticField"
+    },
+    "RSSI" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RSSI"
+    },
+    "Device" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#Device"
+    },
+    "DeltaDewPointSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DeltaDewPointSensor"
+    },
+    "Bar" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Bar"
+    },
+    "FuelConsumptionInstantaneous" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FuelConsumptionInstantaneous"
+    },
+    "ChemicalAgentWaterConcentrationNH4Ion" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentrationNH4Ion"
+    },
+    "RetERabDrop" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RetERabDrop"
+    },
+    "Item" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Item"
+    },
+    "DiastolicBloodPressure" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DiastolicBloodPressure"
+    },
+    "DirectionAzimuth" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DirectionAzimuth"
+    },
+    "Experiment" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Experiment"
+    },
+    "WattPerSquareMetre" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WattPerSquareMetre"
+    },
+    "VehiclesPerMinute" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#VehiclesPerMinute"
+    },
+    "AccRrcConnSetupSuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AccRrcConnSetupSuccRate"
+    },
+    "AtmosphericPressureSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AtmosphericPressureSensor"
+    },
+    "Dimensionless" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Dimensionless"
+    },
+    "WindChill" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WindChill"
+    },
+    "ChemicalAgentWaterConcentrationO2" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ChemicalAgentWaterConcentrationO2"
+    },
+    "WindSpeedSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WindSpeedSensor"
+    },
+    "Microvolt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Microvolt"
+    },
+    "AirPollutantSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirPollutantSensor"
+    },
+    "LeafWetnessSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#LeafWetnessSensor"
+    },
+    "ImageSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ImageSensor"
+    },
+    "Power" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Power"
+    },
+    "CountPeopleStaying" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#CountPeopleStaying"
+    },
+    "ABS" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ABS"
+    },
+    "AlcoholLevelSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AlcoholLevelSensor"
+    },
+    "SoilHumiditySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SoilHumiditySensor"
+    },
+    "DistanceSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DistanceSensor"
+    },
+    "PeopleFlowCountSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PeopleFlowCountSensor"
+    },
+    "FillLevelWasteContainer" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#FillLevelWasteContainer"
+    },
+    "WaterPHSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WaterPHSensor"
+    },
+    "RoadOccupancy" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#RoadOccupancy"
+    },
+    "PresenceStateDriverCard" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PresenceStateDriverCard"
+    },
+    "Millisecond" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Millisecond"
+    },
+    "ElectricField2100MHz" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricField2100MHz"
+    },
+    "SunPositionDirection" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SunPositionDirection"
+    },
+    "relativeLocation" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation"
+    },
+    "hasThingProperty" : {
+      "@id" : "http://www.onem2m.org/ontology/Base_Ontology/base_ontology#hasThingProperty",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    },
+    "MinuteAngle" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MinuteAngle"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "AirHumiditySensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AirHumiditySensor"
+    },
+    "Day" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Day"
+    },
+    "hasQuantityKind" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind",
+      "@type" : "@id"
+    },
+    "Presence" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Presence"
+    },
+    "ElectricalResistance" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#ElectricalResistance"
+    },
+    "MobHoExecSuccRate" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MobHoExecSuccRate"
+    },
+    "TimeRelatedState" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#TimeRelatedState"
+    },
+    "hasSoundSource" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#hasSoundSource",
+      "@type" : "@id"
+    },
+    "isOnline" : {
+      "@id" : "http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isOnline",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "AngularSpeed" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#AngularSpeed"
+    },
+    "Observation" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Observation"
+    },
+    "Wout" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Wout"
+    },
+    "SkinConductanceSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SkinConductanceSensor"
+    },
+    "MagneticFluxDensity" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#MagneticFluxDensity"
+    },
+    "WindSpeed" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#WindSpeed"
+    },
+    "Millivolt" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#Millivolt"
+    },
+    "hasMeasurementCapability" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#hasMeasurementCapability",
+      "@type" : "@id"
+    },
+    "Sensor" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Sensor"
+    },
+    "Accuracy" : {
+      "@id" : "http://purl.oclc.org/NET/ssnx/ssn#Accuracy"
+    },
+    "DirectionOfArrival" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#DirectionOfArrival"
+    },
+    "SunPositionDirectionSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#SunPositionDirectionSensor"
+    },
+    "PHSensor" : {
+      "@id" : "http://purl.org/iot/vocab/m3-lite#PHSensor"
+    }
+  }
+}
