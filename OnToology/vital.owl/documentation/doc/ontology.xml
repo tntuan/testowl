@@ -1,0 +1,1437 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://vital-iot.eu/ontology/ns/"
+     xml:base="http://vital-iot.eu/ontology/ns/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://vital-iot.eu/ontology/ns/">
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://vital-iot.eu/ontology/ns</dc:identifier>
+        <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copyright 2014 - 2017 VITAL.</dc:rights>
+        <dc:title xml:lang="en">VITAL Ontology</dc:title>
+        <terms:license rdf:resource="http://www.w3.org/Consortium/Legal/2002/copyright-software-20021231.html"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please report any error to 
+zeeshan.jan_at_insight-centre.org
+martin.serrano_at_insight-centre_org</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology describes classes and properties for VITAL Project..</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology is developed by Insight-NUIG ( http://www.insight-centre.org ) for the VITAL project ( http://vital-iot.eu ). </rdfs:comment>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://vital-iot.eu</rdfs:seeAlso>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/direction -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/direction">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/Line"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasLastKnownLocation -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasLastKnownLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasLocalizer -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasLocalizer">
+        <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasMovementPattern -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasMovementPattern">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasNetworkConnection -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasNetworkConnection">
+        <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/NetworkConnection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasNetworkSupport -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasNetworkSupport">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2007/uwa/context/network.owl#networkSupport"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasStability -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/hasStability">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/NetworkConnection"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/madeBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/madeBy">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/ServiceRequest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/managesSensor -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/managesSensor">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/name -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/name">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/Line"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/operator -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/operator">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/providesService -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/providesService">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/providesSystem -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/providesSystem">
+        <rdfs:subPropertyOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem"/>
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/VitalSystem"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/serviceArea -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/serviceArea">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/status -->
+
+
+    <owl:ObjectProperty rdf:about="http://vital-iot.eu/ontology/ns/status">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:range rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#deviceHardware -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#deviceHardware"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#status -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#status">
+        <rdfs:domain rdf:resource="http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/network.owl#networkSupport -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/network.owl#networkSupport"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/software.owl#deviceSoftware -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/software.owl#deviceSoftware"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustLevel -->
+
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/TrustLevel">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/TrustedEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/data -->
+
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/data">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/dolceSpecification -->
+
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/dolceSpecification">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterSensor"/>
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPSensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/hasName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/hasName">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/query -->
+
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/query">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/weight -->
+
+
+    <owl:DatatypeProperty rdf:about="http://vital-iot.eu/ontology/ns/weight">
+        <rdfs:domain rdf:resource="http://vital-iot.eu/ontology/ns/TrustConcept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://iserve.kmi.open.ac.uk/ns/msm#Operation -->
+
+
+    <owl:Class rdf:about="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    
+
+
+    <!-- http://iserve.kmi.open.ac.uk/ns/msm#Service -->
+
+
+    <owl:Class rdf:about="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#IotSystem -->
+
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#IotSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Observation -->
+
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Property -->
+
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
+
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#System -->
+
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#System">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/SmartCity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ActiveRequests -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ActiveRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AirManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AirManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Arrival -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Arrival"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Aspect -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Aspect"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Availability -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Availability">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AvailableBikes -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AvailableBikes">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AvailableDesks -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AvailableDesks">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/AvailableMem -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/AvailableMem"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/BusArrival -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/BusArrival">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilterSensor -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilterSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilterStaticDataSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilterStaticQuerySensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/CEPFilterSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPFilteringService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPFilteringService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPICOManagementService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPICOManagementService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CEPSensor -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CEPSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ComplexEvent -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ComplexEvent"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ConfigurationService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ConfigurationService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ConnDMS -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ConnDMS">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ConnectionStability -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Continuous -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Continuous">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateCEPICO -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateCEPICO">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateContinuousFilter -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateContinuousFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateOperation -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/CreateWorkflow -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/CreateWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeleteCEPICO -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeleteCEPICO">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeleteContinuousFilter -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeleteContinuousFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeleteWorkflow -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeleteWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DeployMetaService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DeployMetaService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Disconnected -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Disconnected">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoverICOs -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoverICOs">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoverServices -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoverServices">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoverSystems -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoverSystems">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/DiscoveryService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/DiscoveryService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/EmergencyServices -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/EmergencyServices">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/EmptyDocks -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/EmptyDocks">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/EnergyManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/EnergyManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Errors -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Errors"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ExecuteOperation -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ExecuteOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ExecuteWorkflow -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ExecuteWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FilterStaticData -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FilterStaticData">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FilterStaticQuery -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FilterStaticQuery">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FilteringService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FilteringService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Footfall -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Footfall">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FootfallDown -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FootfallDown">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/FootfallUp -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/FootfallUp">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetCEPICO -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetCEPICO">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetCEPICOs -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetCEPICOs">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetConfiguration -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetConfiguration">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetContinuousFilter -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetContinuousFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetContinuousFilters -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetContinuousFilters">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetMetaService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetMetaService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetMetaServiceList -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetMetaServiceList">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetObservations -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetObservations">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetOperation -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetOperationList -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetOperationList">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetPerformanceMetrics -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetPerformanceMetrics">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSLAParameters -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSLAParameters">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSensorStatus -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSensorStatus">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSupportedPerformanceMetrics -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSupportedPerformanceMetrics">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSupportedSLAParameters -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSupportedSLAParameters">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetSystemStatus -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetSystemStatus">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/GetWorkflowList -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/GetWorkflowList">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/HealthManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/HealthManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Intermittent -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Intermittent">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/ConnectionStability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Line -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Line"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MaxRequests -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MaxRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Mobile -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Mobile">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Model -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Model"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MonitoringSensor -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MonitoringSensor">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/VitalSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MonitoringService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MonitoringService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/MovementPattern -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/NO2 -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/NO2">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/NetworkConnection -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/NetworkConnection"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ObservationService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ObservationService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Operational -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Operational">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/OperationalState -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/OrchestratorService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/OrchestratorService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/PendingRequests -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/PendingRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Predicted -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Predicted">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/RailArrival -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/RailArrival">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/RecreationManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/RecreationManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ResamplingFilter -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ResamplingFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ResponseTime -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ResponseTime"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Running -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Running">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ServedRequests -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ServedRequests"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ServiceRequest -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ServiceRequest">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2011/http#Request"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SetConfiguration -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SetConfiguration">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ShuttingDown -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ShuttingDown">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SmartCity -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SmartCity"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/StartingUp -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/StartingUp">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Stationary -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Stationary">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/MovementPattern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SubscribeToObservationStream -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SubscribeToObservationStream">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SysLoad -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SysLoad"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/SysUptime -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/SysUptime"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/ThresholdFilter -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/ThresholdFilter">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TotalDocks -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TotalDocks">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrafficManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrafficManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TransportManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TransportManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustAspect -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustAspect">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/Aspect"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustConcept -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustConcept"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustEntity -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustEntity"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustParam -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustParam">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustedEntity -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustedEntity">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/TrustEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TrustedModel -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TrustedModel">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/TubeArrival -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/TubeArrival">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/Unavailable -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/Unavailable">
+        <rdfs:subClassOf rdf:resource="http://vital-iot.eu/ontology/ns/OperationalState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UndeployMetaService -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UndeployMetaService">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UnsubscribeFromObservationStream -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UnsubscribeFromObservationStream">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UpdateOperation -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UpdateOperation">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UpdateWorkflow -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UpdateWorkflow">
+        <rdfs:subClassOf rdf:resource="http://iserve.kmi.open.ac.uk/ns/msm#Operation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/UsedMem -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/UsedMem"/>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/VitalSensor -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/VitalSensor">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/VitalSystem -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/VitalSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/WasteManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/WasteManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://vital-iot.eu/ontology/ns/WaterManagement -->
+
+
+    <owl:Class rdf:about="http://vital-iot.eu/ontology/ns/WaterManagement">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#IotSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
+
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/deliveryContext.owl#Device"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#DeviceHardware"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/hardware.owl#HardwareStatus"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/network.owl#NetworkSupport"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/software.owl#DeviceSoftware"/>
+    
+
+
+    <!-- http://www.w3.org/2011/http#Request -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2011/http#Request"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
+
+
