@@ -1,0 +1,506 @@
+{
+  "@context" : {
+    "basedOnPrivacyPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#basedOnPrivacyPolicy",
+      "@type" : "@id"
+    },
+    "hasWrittenSignatureRecorded" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasWrittenSignatureRecorded",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "PrivacyConsentDirective" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyConsentDirective"
+    },
+    "hasSubject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSubject",
+      "@type" : "@id"
+    },
+    "specifiesObligation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesObligation",
+      "@type" : "@id"
+    },
+    "Route" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Route"
+    },
+    "hasDigitalSignature" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasDigitalSignature",
+      "@type" : "http://www.w3.org/2001/XMLSchema#base64Binary"
+    },
+    "governsSecurityRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsSecurityRole",
+      "@type" : "@id"
+    },
+    "hasInformationCustodian" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasInformationCustodian",
+      "@type" : "@id"
+    },
+    "hasPrivacyPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPrivacyPolicy",
+      "@type" : "@id"
+    },
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "InterorganizationalAgreement" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#InterorganizationalAgreement"
+    },
+    "hasTimeOfTreatment" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasTimeOfTreatment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "specifiesRefrain" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesRefrain",
+      "@type" : "@id"
+    },
+    "PrivacyPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyPolicy"
+    },
+    "containsSecurityPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#containsSecurityPolicy",
+      "@type" : "@id"
+    },
+    "UserAssignment" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#UserAssignment"
+    },
+    "hasRecipient" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasRecipient",
+      "@type" : "@id"
+    },
+    "hasObject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasObject",
+      "@type" : "@id"
+    },
+    "FunctionalRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#FunctionalRole"
+    },
+    "SeparationOfDutyConstraint" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SeparationOfDutyConstraint"
+    },
+    "UserIdentity" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#UserIdentity"
+    },
+    "DelegationPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#DelegationPolicy"
+    },
+    "Consenter" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Consenter"
+    },
+    "PurposeOfUse" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PurposeOfUse"
+    },
+    "hasAuthority" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasAuthority",
+      "@type" : "@id"
+    },
+    "allowedLoginTimeOfDay" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#allowedLoginTimeOfDay"
+    },
+    "SecurityRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SecurityRole"
+    },
+    "Organization" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Organization"
+    },
+    "hasRoleSet" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasRoleSet",
+      "@type" : "@id"
+    },
+    "assignsSecurityRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#assignsSecurityRole",
+      "@type" : "@id"
+    },
+    "hasSecurityPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSecurityPolicy",
+      "@type" : "@id"
+    },
+    "ObligationPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ObligationPolicy"
+    },
+    "authorizedByAgreement" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedByAgreement",
+      "@type" : "@id"
+    },
+    "Thing" : {
+      "@id" : "http://www.w3.org/2002/07/owl#Thing"
+    },
+    "hasConsenter" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasConsenter",
+      "@type" : "@id"
+    },
+    "hasName" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Obligation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Obligation"
+    },
+    "usingWorkstationId" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#usingWorkstationId",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Object" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Object"
+    },
+    "Refrain" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Refrain"
+    },
+    "operatesOnInputObject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnInputObject",
+      "@type" : "@id"
+    },
+    "governsTimeOfDay" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsTimeOfDay"
+    },
+    "Authority" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Authority"
+    },
+    "PaymentSource" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PaymentSource"
+    },
+    "governsInformationReference" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsInformationReference",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "isLegalGuardianOf" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isLegalGuardianOf",
+      "@type" : "@id"
+    },
+    "hasIdentifier" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasIdentifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasSubstituteDecisionMaker" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSubstituteDecisionMaker",
+      "@type" : "@id"
+    },
+    "restrictedToRoute" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#restrictedToRoute",
+      "@type" : "@id"
+    },
+    "Location" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Location"
+    },
+    "separatesSecurityRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#separatesSecurityRole",
+      "@type" : "@id"
+    },
+    "hasSubjectOfConsent" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSubjectOfConsent",
+      "@type" : "@id"
+    },
+    "PrivacyOperation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyOperation"
+    },
+    "Operation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Operation"
+    },
+    "hasIntegrity" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasIntegrity",
+      "@type" : "@id"
+    },
+    "hasServiceDeliveryLocation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasServiceDeliveryLocation",
+      "@type" : "@id"
+    },
+    "hasDomainName" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasDomainName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "ClinicalObservation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ClinicalObservation"
+    },
+    "hasPaymentSource" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPaymentSource",
+      "@type" : "@id"
+    },
+    "hasPrivacyRule" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPrivacyRule",
+      "@type" : "@id"
+    },
+    "Person" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Person"
+    },
+    "Sensitivity" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Sensitivity"
+    },
+    "PrivacyRule" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#PrivacyRule"
+    },
+    "UserAssignmentSet" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#UserAssignmentSet"
+    },
+    "JurisdictionalOrganization" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#JurisdictionalOrganization"
+    },
+    "Compartment" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Compartment"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator"
+    },
+    "Population" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Population"
+    },
+    "includesUserAssignment" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#includesUserAssignment",
+      "@type" : "@id"
+    },
+    "DataOperation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#DataOperation"
+    },
+    "assignsUserIdentity" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#assignsUserIdentity",
+      "@type" : "@id"
+    },
+    "Constraint" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Constraint"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "Confidentiality" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Confidentiality"
+    },
+    "operatesOnOutputObject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnOutputObject",
+      "@type" : "@id"
+    },
+    "authorizedByLawOf" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedByLawOf",
+      "@type" : "@id"
+    },
+    "BasicSecurityPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#BasicSecurityPolicy"
+    },
+    "AuthorizationPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#AuthorizationPolicy"
+    },
+    "isParentOf" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isParentOf",
+      "@type" : "@id"
+    },
+    "hasClinicalObservation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasClinicalObservation",
+      "@type" : "@id"
+    },
+    "operatesOnInputOutputObject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnInputOutputObject",
+      "@type" : "@id"
+    },
+    "ConstraintPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ConstraintPolicy"
+    },
+    "thirdPartyLevelOfAssurance" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#thirdPartyLevelOfAssurance"
+    },
+    "hasPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPolicy",
+      "@type" : "@id"
+    },
+    "subject" : {
+      "@id" : "http://purl.org/dc/elements/1.1/subject"
+    },
+    "ProviderOrganization" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ProviderOrganization"
+    },
+    "catalogsConstraint" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#catalogsConstraint",
+      "@type" : "@id"
+    },
+    "hasSensitivity" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasSensitivity",
+      "@type" : "@id"
+    },
+    "operatesOnObject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#operatesOnObject",
+      "@type" : "@id"
+    },
+    "hasEffectiveTime" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasEffectiveTime",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Jurisdiction" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Jurisdiction"
+    },
+    "authenticationLevelOfAssurance" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authenticationLevelOfAssurance"
+    },
+    "allowedLoginLocation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#allowedLoginLocation",
+      "@type" : "@id"
+    },
+    "SecurityPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SecurityPolicy"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "source" : {
+      "@id" : "http://purl.org/dc/elements/1.1/source"
+    },
+    "includesSecurityRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#includesSecurityRole",
+      "@type" : "@id"
+    },
+    "StructuralRole" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#StructuralRole"
+    },
+    "createsObligation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#createsObligation",
+      "@type" : "@id"
+    },
+    "isSubstituteDecisionMakerFor" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isSubstituteDecisionMakerFor",
+      "@type" : "@id"
+    },
+    "hasUserAssignmentSet" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasUserAssignmentSet",
+      "@type" : "@id"
+    },
+    "authorizedBySubject" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedBySubject",
+      "@type" : "@id"
+    },
+    "authorizedByOrganization" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedByOrganization",
+      "@type" : "@id"
+    },
+    "hasJurisdiction" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasJurisdiction",
+      "@type" : "@id"
+    },
+    "RoleSet" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#RoleSet"
+    },
+    "governsPurposeOfUse" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsPurposeOfUse",
+      "@type" : "@id"
+    },
+    "HealthRecord" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#HealthRecord"
+    },
+    "authorizedBy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#authorizedBy",
+      "@type" : "@id"
+    },
+    "hasCitizenship" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCitizenship",
+      "@type" : "@id"
+    },
+    "date" : {
+      "@id" : "http://purl.org/dc/elements/1.1/date"
+    },
+    "specifiesConstraint" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesConstraint",
+      "@type" : "@id"
+    },
+    "Clearinghouse" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Clearinghouse"
+    },
+    "isConsenterFor" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isConsenterFor",
+      "@type" : "@id"
+    },
+    "hasOrganization" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasOrganization",
+      "@type" : "@id"
+    },
+    "Policy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Policy"
+    },
+    "hasPublicationURI" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPublicationURI",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "constrainsSecurityPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#constrainsSecurityPolicy",
+      "@type" : "@id"
+    },
+    "hasCustodian" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCustodian",
+      "@type" : "@id"
+    },
+    "ServiceDeliveryLocation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ServiceDeliveryLocation"
+    },
+    "hasCompartment" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCompartment",
+      "@type" : "@id"
+    },
+    "RefrainPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#RefrainPolicy"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "identityProofingLevelOfAssurance" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#identityProofingLevelOfAssurance"
+    },
+    "language" : {
+      "@id" : "http://purl.org/dc/elements/1.1/language"
+    },
+    "ConstraintCatalog" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#ConstraintCatalog"
+    },
+    "contributor" : {
+      "@id" : "http://purl.org/dc/elements/1.1/contributor"
+    },
+    "CompositeSecurityPolicy" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#CompositeSecurityPolicy"
+    },
+    "hasConstraintCatalog" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasConstraintCatalog",
+      "@type" : "@id"
+    },
+    "specifiesGrantee" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#specifiesGrantee",
+      "@type" : "@id"
+    },
+    "Grantee" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Grantee"
+    },
+    "hasConfidentiality" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasConfidentiality",
+      "@type" : "@id"
+    },
+    "levelOfAssurance" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#levelOfAssurance",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "hasPrivacyConsentDirective" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasPrivacyConsentDirective",
+      "@type" : "@id"
+    },
+    "SubjectOfRecord" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#SubjectOfRecord"
+    },
+    "governsOperation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#governsOperation",
+      "@type" : "@id"
+    },
+    "InformationReference" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#InformationReference"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    },
+    "Client" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Client"
+    },
+    "hasCurrentLocation" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#hasCurrentLocation",
+      "@type" : "@id"
+    },
+    "Integrity" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#Integrity"
+    },
+    "isLocationForOrganization" : {
+      "@id" : "http://hl7.org/ontology/SecurityAndPrivacyOntology.owl#isLocationForOrganization",
+      "@type" : "@id"
+    }
+  }
+}

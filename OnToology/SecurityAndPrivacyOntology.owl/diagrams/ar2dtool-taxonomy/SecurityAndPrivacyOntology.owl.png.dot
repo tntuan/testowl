@@ -1,0 +1,19 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:PrivacyOperation" "base:AuthorizationPolicy" "base:ServiceDeliveryLocation" "base:BasicSecurityPolicy" "base:ProviderOrganization" "base:CompositeSecurityPolicy" "base:Location" "base:SecurityRole" "base:FunctionalRole" "base:Clearinghouse" "base:HealthRecord" "base:Object" "base:PrivacyPolicy" "base:DataOperation" "base:SecurityPolicy" "base:StructuralRole" "base:Operation" "base:Organization" "base:Policy" ; /*classes style*/
+	"base:DataOperation" -> "base:Operation" [ label = "rdfs:subClassOf" ];
+	"base:BasicSecurityPolicy" -> "base:SecurityPolicy" [ label = "rdfs:subClassOf" ];
+	"base:PrivacyPolicy" -> "base:Policy" [ label = "rdfs:subClassOf" ];
+	"base:FunctionalRole" -> "base:SecurityRole" [ label = "rdfs:subClassOf" ];
+	"base:Clearinghouse" -> "base:Organization" [ label = "rdfs:subClassOf" ];
+	"base:ServiceDeliveryLocation" -> "base:Location" [ label = "rdfs:subClassOf" ];
+	"base:CompositeSecurityPolicy" -> "base:SecurityPolicy" [ label = "rdfs:subClassOf" ];
+	"base:PrivacyOperation" -> "base:Operation" [ label = "rdfs:subClassOf" ];
+	"base:SecurityPolicy" -> "base:Policy" [ label = "rdfs:subClassOf" ];
+	"base:AuthorizationPolicy" -> "base:BasicSecurityPolicy" [ label = "rdfs:subClassOf" ];
+	"base:ProviderOrganization" -> "base:Organization" [ label = "rdfs:subClassOf" ];
+	"base:HealthRecord" -> "base:Object" [ label = "rdfs:subClassOf" ];
+	"base:StructuralRole" -> "base:SecurityRole" [ label = "rdfs:subClassOf" ];
+
+}
