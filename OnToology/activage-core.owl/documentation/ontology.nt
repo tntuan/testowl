@@ -1,0 +1,223 @@
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://www.w3.org/2002/07/owl#imports> <http://srvgal106.deri.ie:8013/ontology/GOIoTP.owl> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://www.w3.org/2002/07/owl#imports> <http://srvgal106.deri.ie:8013/ontology/GOIoTPex.owl> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://purl.org/dc/elements/1.1/description> "ACTIVAGE is a multi-centric Large Scale Pilot Project which aims to build the first interoperable and open AHA-IoT Ecosystem which enables the deployment and operation of Active & Healthy Ageing IoT-based solutions and services in Europe." .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://purl.org/dc/elements/1.1/title> "ACTIVAGE Ontology" .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://purl.org/dc/terms/rights> "This ontology is distributed under a Creative Commons Attribution License - http://creativecommons.org/licenses/by/3.0" .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> <http://www.w3.org/2000/01/rdf-schema#comment> "ACTIVAGE Ontology: shell classes" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AAL
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AAL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AAL> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inter-iot.eu/GOIoTP#DomainOfInterest> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AAL> <http://www.w3.org/2000/01/rdf-schema#label> "Ambient Assisted Living"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Air temperature sensor is a the bulk temperature of the air, not the surface (skin) temperature.."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Air Temperature Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Board Temperature Sensor ia a sensor that can be used to measure temperature in the board."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Board Temperature Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inter-iot.eu/GOIoTP#DomainOfInterest> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City> <http://www.w3.org/2000/01/rdf-schema#comment> "Smart City as an Internet of Things (IoT) applicative domain."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City> <http://www.w3.org/2000/01/rdf-schema#label> "Smart City DOI"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel> <http://www.w3.org/2000/01/rdf-schema#comment> "Decibel is a logarithmic unit used to express the ratio of two values of a physical quantity. It is often used to measure sound level."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel> <http://www.w3.org/2000/01/rdf-schema#label> "Decibel (dB)"@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#Decibel"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint> <http://www.w3.org/2000/01/rdf-schema#comment> "Device that measures the difference between Dewpoint and surface temperatures."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint> <http://www.w3.org/2000/01/rdf-schema#label> "Delta Dew Point"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://inter-iot.eu/GOIoTP#hasUnit> .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observes> .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/2000/01/rdf-schema#comment> "A Dew Cell is an instrument used for determining the dew point. A dew cell heats a salt solution until its equilibrium vapour pressure equals to the ambient vapour pressure, and maintains this equilibrium The temperature when this occurs is measured and it provides a measure of the ambient vapour pressure" .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/2000/01/rdf-schema#label> "Dew Cell" .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf" .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inter-iot.eu/GOIoTPex#Temperature> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "The dew point is the temperature to which air must be cooled to become saturated with water vapor." .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://en.wikipedia.org/wiki/Dew_point" .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor> <http://www.w3.org/2000/01/rdf-schema#comment> "The Electricity sensor detects and measures the active power current along an electrical wire using the magnetic field with the watt."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor> <http://www.w3.org/2000/01/rdf-schema#label> "Electricity Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inter-iot.eu/GOIoTP#DomainOfInterest> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health> <http://www.w3.org/2000/01/rdf-schema#comment> "Health care as an Internet of Things (IoT) applicative domain."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health> <http://www.w3.org/2000/01/rdf-schema#label> "Health Care DOI"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor> <http://www.w3.org/2000/01/rdf-schema#label> "Humidity Sensor" .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observes> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://inter-iot.eu/GOIoTPex#Illuminance> .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Carbon Dioxide (CO2) Sensor used to measure level of CO2 in the atmosphere of the office."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Office CO2 Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Humidity sensor or hygrometer is an instrument used for measuring the moisture concent in the environment."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor> <http://www.w3.org/2000/01/rdf-schema#label> "Office Humidity Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeIlluminationSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeIlluminationSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeIlluminationSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeIlluminationSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Office Illumination Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "The temperature of the air in the office that would be indicated by a thermometer exposed to the air at a location sheltered from direct solar radiation."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Office Temperature Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device which can measure the difference in electric potential energy between two points per unit electric charge."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Output Voltage Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Parking sensor is proximity sensor for road vehicles designed to alert the driver of obstacles while parking"@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Parking Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Presence
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Presence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Presence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/ObservableProperty> .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Observation> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://inter-iot.eu/GOIoTP#hasResultValue> .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs> <http://www.w3.org/2000/01/rdf-schema#label> "Presence Observation"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A radiation sensor was a type of sensor that measured radiation"@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Radiation Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Certain materials interact with water vapour and undergo a change in \nelectrical resistance, in relation to ambient humidity."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor> <http://www.w3.org/2000/01/rdf-schema#label> "Relative Humidity Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A sound level sensor is used to detect Noise level."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sound Level Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://inter-iot.eu/GOIoTP#DomainOfInterest> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation> <http://www.w3.org/2000/01/rdf-schema#comment> "Transportation, Smart Car/Vehicle, Intelligent Transport System (ITS) as an Internet of Things (IoT) applicative domain."@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation> <http://www.w3.org/2000/01/rdf-schema#label> "Transportation DOI"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/madeObservation> .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor> <http://www.w3.org/2000/01/rdf-schema#comment> "The User Occupancy Sensor is an indoor motion detecting devices used to detect the presence of a person to automatically control lights or temperature or ventilation systems"@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor> <http://www.w3.org/2000/01/rdf-schema#label> "User Occupancy Sensor"@en .
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/madeObservation> .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs> .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device used to detect if an object (vehicle, room, place, etc.) is occupied by User"@en .
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor> <http://www.w3.org/2000/01/rdf-schema#label> "User Presence Sensor"@en .
+# 
+# http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Output> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Index
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Index> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

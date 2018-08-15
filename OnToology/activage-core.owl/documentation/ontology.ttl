@@ -1,0 +1,248 @@
+@prefix : <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> .
+
+<http://www.semanticweb.org/activage/ontologies/2018/4/activage-core> rdf:type owl:Ontology ;
+                                                                       owl:imports <http://srvgal106.deri.ie:8013/ontology/GOIoTP.owl> ,
+                                                                                   <http://srvgal106.deri.ie:8013/ontology/GOIoTPex.owl> ;
+                                                                       <http://purl.org/dc/elements/1.1/description> "ACTIVAGE is a multi-centric Large Scale Pilot Project which aims to build the first interoperable and open AHA-IoT Ecosystem which enables the deployment and operation of Active & Healthy Ageing IoT-based solutions and services in Europe."^^xsd:string ;
+                                                                       <http://purl.org/dc/elements/1.1/title> "ACTIVAGE Ontology"^^xsd:string ;
+                                                                       <http://purl.org/dc/terms/rights> "This ontology is distributed under a Creative Commons Attribution License - http://creativecommons.org/licenses/by/3.0"^^xsd:string ;
+                                                                       rdfs:comment "ACTIVAGE Ontology: shell classes"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AAL
+:AAL rdf:type owl:Class ;
+     rdfs:subClassOf <http://inter-iot.eu/GOIoTP#DomainOfInterest> ;
+     rdfs:label "Ambient Assisted Living"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor
+:AirTemperatureSensor rdf:type owl:Class ;
+                      rdfs:subClassOf :TemperatureSensor ;
+                      rdfs:comment "Air temperature sensor is a the bulk temperature of the air, not the surface (skin) temperature.."@en ;
+                      rdfs:label "Air Temperature Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor
+:BoardTemperatureSensor rdf:type owl:Class ;
+                        rdfs:subClassOf :TemperatureSensor ;
+                        rdfs:comment "Board Temperature Sensor ia a sensor that can be used to measure temperature in the board."@en ;
+                        rdfs:label "Board Temperature Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf <http://inter-iot.eu/GOIoTP#DomainOfInterest> ;
+      rdfs:comment "Smart City as an Internet of Things (IoT) applicative domain."@en ;
+      rdfs:label "Smart City DOI"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel
+:Decibel rdf:type owl:Class ;
+         rdfs:subClassOf <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit> ;
+         rdfs:comment "Decibel is a logarithmic unit used to express the ratio of two values of a physical quantity. It is often used to measure sound level."@en ;
+         rdfs:label "Decibel (dB)"@en ;
+         rdfs:seeAlso "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#Decibel"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint
+:DeltaDewpoint rdf:type owl:Class ;
+               rdfs:subClassOf :DewCell ;
+               rdfs:comment "Device that measures the difference between Dewpoint and surface temperatures."@en ;
+               rdfs:label "Delta Dew Point"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell
+:DewCell rdf:type owl:Class ;
+         rdfs:subClassOf :HumiditySensor ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://inter-iot.eu/GOIoTP#hasUnit> ;
+                           owl:someValuesFrom <http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://www.w3.org/ns/sosa/observes> ;
+                           owl:someValuesFrom :DewPoint
+                         ] ;
+         rdfs:comment "A Dew Cell is an instrument used for determining the dew point. A dew cell heats a salt solution until its equilibrium vapour pressure equals to the ambient vapour pressure, and maintains this equilibrium The temperature when this occurs is measured and it provides a measure of the ambient vapour pressure"^^xsd:string ;
+         rdfs:label "Dew Cell"^^xsd:string ;
+         rdfs:seeAlso "http://www.hydrometeoindustry.org/Meetings2010/ET-AWS-6/Doc8[1]-AWS-MetadataCatalogues.pdf"^^xsd:string .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint
+:DewPoint rdf:type owl:Class ;
+          rdfs:subClassOf <http://inter-iot.eu/GOIoTPex#Temperature> ;
+          rdfs:comment "The dew point is the temperature to which air must be cooled to become saturated with water vapor."^^xsd:string ;
+          rdfs:seeAlso "https://en.wikipedia.org/wiki/Dew_point"^^xsd:string .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor
+:ElectricitySensor rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                   rdfs:comment "The Electricity sensor detects and measures the active power current along an electrical wire using the magnetic field with the watt."@en ;
+                   rdfs:label "Electricity Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health
+:Health rdf:type owl:Class ;
+        rdfs:subClassOf <http://inter-iot.eu/GOIoTP#DomainOfInterest> ;
+        rdfs:comment "Health care as an Internet of Things (IoT) applicative domain."@en ;
+        rdfs:label "Health Care DOI"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor
+:HumiditySensor rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                rdfs:label "Humidity Sensor"^^xsd:string .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor
+:IlluminanceSensor rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.w3.org/ns/sosa/observes> ;
+                                     owl:someValuesFrom <http://inter-iot.eu/GOIoTPex#Illuminance>
+                                   ] .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor
+:OfficeCO2Sensor rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                 rdfs:comment "Carbon Dioxide (CO2) Sensor used to measure level of CO2 in the atmosphere of the office."@en ;
+                 rdfs:label "Office CO2 Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor
+:OfficeHumiditySensor rdf:type owl:Class ;
+                      rdfs:subClassOf :HumiditySensor ;
+                      rdfs:comment "Humidity sensor or hygrometer is an instrument used for measuring the moisture concent in the environment."@en ;
+                      rdfs:label "Office Humidity Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeIlluminationSensor
+:OfficeIlluminationSensor rdf:type owl:Class ;
+                          rdfs:subClassOf :IlluminanceSensor ;
+                          rdfs:label "Office Illumination Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor
+:OfficeTemperatureSensor rdf:type owl:Class ;
+                         rdfs:subClassOf :TemperatureSensor ;
+                         rdfs:comment "The temperature of the air in the office that would be indicated by a thermometer exposed to the air at a location sheltered from direct solar radiation."@en ;
+                         rdfs:label "Office Temperature Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor
+:OutputVoltageSensor rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                     rdfs:comment "Device which can measure the difference in electric potential energy between two points per unit electric charge."@en ;
+                     rdfs:label "Output Voltage Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor
+:ParkingSensor rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+               rdfs:comment "Parking sensor is proximity sensor for road vehicles designed to alert the driver of obstacles while parking"@en ;
+               rdfs:label "Parking Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Presence
+:Presence rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs
+:PresenceObs rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://inter-iot.eu/GOIoTP#hasResultValue> ;
+                               owl:someValuesFrom xsd:boolean
+                             ] ;
+             rdfs:label "Presence Observation"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor
+:RadiationSensor rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                 rdfs:comment "A radiation sensor was a type of sensor that measured radiation"@en ;
+                 rdfs:label "Radiation Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor
+:RelativeHumiditySensor rdf:type owl:Class ;
+                        rdfs:subClassOf :HumiditySensor ;
+                        rdfs:comment """Certain materials interact with water vapour and undergo a change in 
+electrical resistance, in relation to ambient humidity."""@en ;
+                        rdfs:label "Relative Humidity Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor
+:SoundLevelSensor rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                  rdfs:comment "A sound level sensor is used to detect Noise level."@en ;
+                  rdfs:label "Sound Level Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor
+:TemperatureSensor rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ;
+                   rdfs:label "Temperature Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation
+:Transportation rdf:type owl:Class ;
+                rdfs:subClassOf <http://inter-iot.eu/GOIoTP#DomainOfInterest> ;
+                rdfs:comment "Transportation, Smart Car/Vehicle, Intelligent Transport System (ITS) as an Internet of Things (IoT) applicative domain."@en ;
+                rdfs:label "Transportation DOI"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor
+:UserOccupancySensor rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/sosa/madeObservation> ;
+                                       owl:someValuesFrom :PresenceObs
+                                     ] ;
+                     rdfs:comment "The User Occupancy Sensor is an indoor motion detecting devices used to detect the presence of a person to automatically control lights or temperature or ventilation systems"@en ;
+                     rdfs:label "User Occupancy Sensor"@en .
+
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor
+:UserPresenceSensor rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/sosa/madeObservation> ;
+                                      owl:someValuesFrom :PresenceObs
+                                    ] ;
+                    rdfs:comment "Device used to detect if an object (vehicle, room, place, etc.) is occupied by User"@en ;
+                    rdfs:label "User Presence Sensor"@en .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> rdfs:subClassOf <http://www.w3.org/ns/ssn/Output> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Index
+:Index rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
