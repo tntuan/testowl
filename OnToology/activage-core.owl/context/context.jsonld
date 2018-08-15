@@ -1,0 +1,145 @@
+{
+  "@context" : {
+    "OfficeHumiditySensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeHumiditySensor"
+    },
+    "IlluminanceSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#IlluminanceSensor"
+    },
+    "Unit" : {
+      "@id" : "http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#Unit"
+    },
+    "OfficeCO2Sensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeCO2Sensor"
+    },
+    "AirTemperatureSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AirTemperatureSensor"
+    },
+    "ParkingSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ParkingSensor"
+    },
+    "Health" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Health"
+    },
+    "PresenceObs" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#PresenceObs"
+    },
+    "OfficeIlluminationSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeIlluminationSensor"
+    },
+    "DewCell" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewCell"
+    },
+    "Transportation" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Transportation"
+    },
+    "BaseUnit" : {
+      "@id" : "http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#BaseUnit"
+    },
+    "UserOccupancySensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserOccupancySensor"
+    },
+    "DewPoint" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DewPoint"
+    },
+    "BoardTemperatureSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#BoardTemperatureSensor"
+    },
+    "AAL" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#AAL"
+    },
+    "Decibel" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Decibel"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "SoundLevelSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#SoundLevelSensor"
+    },
+    "OfficeTemperatureSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OfficeTemperatureSensor"
+    },
+    "Temperature" : {
+      "@id" : "http://inter-iot.eu/GOIoTPex#Temperature"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "OutputVoltageSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#OutputVoltageSensor"
+    },
+    "UserPresenceSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#UserPresenceSensor"
+    },
+    "observes" : {
+      "@id" : "http://www.w3.org/ns/sosa/observes",
+      "@type" : "@id"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "TemperatureSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#TemperatureSensor"
+    },
+    "hasUnit" : {
+      "@id" : "http://inter-iot.eu/GOIoTP#hasUnit",
+      "@type" : "@id"
+    },
+    "madeObservation" : {
+      "@id" : "http://www.w3.org/ns/sosa/madeObservation",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+    },
+    "ElectricitySensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#ElectricitySensor"
+    },
+    "Illuminance" : {
+      "@id" : "http://inter-iot.eu/GOIoTPex#Illuminance"
+    },
+    "City" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#City"
+    },
+    "Output" : {
+      "@id" : "http://www.w3.org/ns/ssn/Output"
+    },
+    "RelativeHumiditySensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RelativeHumiditySensor"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "ObservableProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+    },
+    "HumiditySensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#HumiditySensor"
+    },
+    "RadiationSensor" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#RadiationSensor"
+    },
+    "DeltaDewpoint" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#DeltaDewpoint"
+    },
+    "DomainOfInterest" : {
+      "@id" : "http://inter-iot.eu/GOIoTP#DomainOfInterest"
+    },
+    "hasResultValue" : {
+      "@id" : "http://inter-iot.eu/GOIoTP#hasResultValue"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/elements/1.1/description"
+    },
+    "Presence" : {
+      "@id" : "http://www.semanticweb.org/activage/ontologies/2018/4/activage-core#Presence"
+    },
+    "Observation" : {
+      "@id" : "http://www.w3.org/ns/sosa/Observation"
+    },
+    "Sensor" : {
+      "@id" : "http://www.w3.org/ns/sosa/Sensor"
+    }
+  }
+}
